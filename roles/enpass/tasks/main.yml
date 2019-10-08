@@ -1,0 +1,16 @@
+---
+# tasks file for enpass
+- name: Add Enpass key
+  apt_key:
+    url: https://apt.enpass.io/keys/enpass-linux.key
+    state: present
+
+- name: Add Enpass repo
+  apt_repository:
+    repo: deb https://apt.enpass.io/ stable main
+    filename: enpass
+    update_cache: yes
+    state: present
+
+- name: Install Enpass
+  apt: name=enpass
