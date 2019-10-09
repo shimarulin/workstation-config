@@ -1,0 +1,3 @@
+---
+# tasks file for zsh
+- import_tasks: install.yml
