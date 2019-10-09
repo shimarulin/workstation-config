@@ -1,0 +1,14 @@
+---
+# This playbook deploys the whole application stack.
+
+- name: apply common configuration to all nodes
+  hosts: all
+  tasks:
+    - name: install dependencies
+      become: yes
+      apt:
+        name: "{{ packages }}"
+        # state: present # by default
+      vars:
+        packages:
+          - meld

@@ -8,5 +8,5 @@
 ## Development
 
 ```bash
-molecule init role --role-name <role-name>
+molecule init role --driver-name vagrant --role-name <role-name>
 ```
