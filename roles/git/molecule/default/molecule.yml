@@ -9,7 +9,7 @@ lint:
   name: yamllint
 platforms:
   - name: instance
-    box: ubuntu/xenial64
+    box: ubuntu/eoan64
 provisioner:
   name: ansible
   lint:

@@ -1,2 +1,10 @@
 ---
 # tasks file for git
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ packages }}"
+    # state: present # by default
+  vars:
+    packages:
+      - git
