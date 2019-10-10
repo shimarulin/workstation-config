@@ -5,3 +5,4 @@
   hosts: all
   roles:
     - git
+    - java

@@ -1,0 +1,17 @@
+---
+# tasks file for java
+- name: add Oracle Java PPA
+  become: yes
+  apt_repository:
+    repo: ppa:linuxuprising/java
+    update_cache: yes
+    state: present
+
+- name: accept the license
+  shell: echo oracle-java12-installer shared/accepted-oracle-license-v1-2 select true | sudo /usr/bin/debconf-set-selections
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ java_packages }}"
+    # state: present # by default
