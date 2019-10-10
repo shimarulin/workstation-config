@@ -5,3 +5,12 @@
   apt:
     name: "{{ git_packages }}"
     # state: present # by default
+
+- name: place git configuration
+  template:
+    src: gitconfig.j2
+    dest: /home/{{ user_name }}/.gitconfig
+  when:
+    - user_name is defined
+    - git_user_name is defined
+    - git_user_email is defined

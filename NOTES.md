@@ -4,6 +4,9 @@
 - https://jinja.palletsprojects.com/
 - https://click.palletsprojects.com/
 
+- https://cookiecutter.readthedocs.io/en/latest/readme.html
+- https://github.com/retr0h/cookiecutter-molecule
+
 ## Development
 
 ### Testing with Molecule and Vagrant
@@ -25,4 +28,19 @@ vagrant init chenhan/ubuntu-desktop-19.10 --box-version 20190916
 
 ```bash
 ansible-galaxy init --init-path=roles
+```
+
+---
+
+Создать роль
+
+```bash
+cookiecutter --output-dir roles templates/role
+```
+
+Настройка контекста пользователя для использования cookiecutter (глобальные переменные ансибла возможно тоже здесь создавать?)
+Сгенерировать `.cookiecutterrc` в домашнем каталоге для создания переменных, используемых при разработке.
+
+```bash
+cookiecutter --output-dir /home -f templates/cookiecutterrc
 ```
