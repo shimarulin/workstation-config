@@ -10,3 +10,6 @@
 
 ### Vagrant Patch ###
 *.box
+
+### User settings ###
+group_vars/all

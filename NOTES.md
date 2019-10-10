@@ -44,3 +44,13 @@ cookiecutter --output-dir roles templates/role
 ```bash
 cookiecutter --output-dir /home -f templates/cookiecutterrc
 ```
+
+## Использование
+
+1. Создаем переменные
+
+    ```bash
+    cookiecutter -f templates/vars
+    ```
+2. Запускаем плейбук
+
