@@ -1,0 +1,1 @@
+- [ ] create CLI for make host variables with 'click' and 'janja' (git user, email)
