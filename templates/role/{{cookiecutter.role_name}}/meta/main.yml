@@ -1,6 +1,6 @@
 ---
 galaxy_info:
-  git_user_name: {{ cookiecutter.git_user_name }}
+  author: {{ cookiecutter.author }}
   description: {{ cookiecutter.description }}
   license: {{ cookiecutter.license }}
   min_ansible_version: {{ cookiecutter.min_ansible_version }}
