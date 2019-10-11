@@ -7,8 +7,12 @@
     update_cache: yes
     state: present
 
-- name: accept the license
-  shell: echo oracle-java12-installer shared/accepted-oracle-license-v1-2 select true | sudo /usr/bin/debconf-set-selections
+- name: accept oracle license
+  debconf:
+    name: oracle-java12-installer
+    question: shared/accepted-oracle-license-v1-2
+    value: 'true'
+    vtype: select
 
 - name: install dependencies
   become: yes
