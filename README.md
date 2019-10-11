@@ -1,9 +1,10 @@
 # Ansible config for my workstations
 
-## Tools
+## Usage
 
-- https://github.com/kkirsche/ansible-generator
-- https://github.com/ansible/molecule
+```bash
+cookiecutter -f templates/vars
+```
 
 ## Development
 

@@ -1,3 +1,5 @@
+- https://opensource.com/article/18/5/manage-your-workstation-ansible-part-3
+
 ## Common variables
 
 - `username` - username
