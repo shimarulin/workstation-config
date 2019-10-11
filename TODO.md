@@ -1,1 +1,13 @@
-- [ ] create CLI for make host variables with 'click' and 'janja' (git user, email)
+- [ ] remove snap packages
+- [ ] install Flatpack
+- [ ] install oh-my-zsh
+- [ ] install and setup Tilix
+- [ ] install NodeJS via NVM
+- [ ] install VirtualBox
+- [ ] install Vagrant
+- [ ] install Podman
+- [ ] setup Gnome
+- [ ] setup Gedit
+- [ ] setup Nautilus
+- [ ] install Enpass
+- [ ] install SparkleShare
