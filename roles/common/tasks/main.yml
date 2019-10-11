@@ -1,0 +1,11 @@
+---
+# tasks file for common actions
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ common_packages }}"
+    update_cache: yes
+
+- name: get username
+  command: whoami
+  register: username

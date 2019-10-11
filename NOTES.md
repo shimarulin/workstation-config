@@ -1,3 +1,7 @@
+## Common variables
+
+- `username` - username
+
 ## Links
 
 - https://nedbatchelder.com/code/cog/

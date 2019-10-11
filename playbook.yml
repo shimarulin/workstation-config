@@ -4,6 +4,7 @@
 - name: apply common configuration to all nodes
   hosts: all
   roles:
+    - common
     - git
     - java
     - zsh
