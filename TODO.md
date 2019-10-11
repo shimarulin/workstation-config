@@ -11,3 +11,4 @@
 - [ ] setup Nautilus
 - [ ] install Enpass
 - [ ] install SparkleShare
+- [ ] install ulauncher
