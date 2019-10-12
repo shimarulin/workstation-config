@@ -1,7 +1,16 @@
 ---
 # tasks file for tilix
-- name: install dependencies
+- name: install Tilix
   become: yes
   apt:
     name: "{{ tilix_packages }}"
     # state: present # by default
+
+# If you got error, please see
+# https://stackoverflow.com/a/51973504
+# and
+# https://docs.ansible.com/ansible/latest/inventory/implicit_localhost.html
+#- name: Configure keyboard shortcut for Tilix Quake mode
+#  dconf:
+#    key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+#    value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"

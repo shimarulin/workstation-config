@@ -1,5 +1,11 @@
 # Ansible config for my workstations
 
+## R
+
+```bash
+pip3 install --user psutil
+```
+
 ## Usage
 
 ```bash

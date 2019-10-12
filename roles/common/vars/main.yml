@@ -2,3 +2,4 @@
 # vars file for common
 common_packages:
   - curl
+  - dconf-editor

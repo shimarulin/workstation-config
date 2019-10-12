@@ -15,6 +15,10 @@
 
 ## Development
 
+### Error
+
+- https://stackoverflow.com/a/51973504
+
 ### Testing with Molecule and Vagrant
 
 Создал новый `Vagrantfile` из https://app.vagrantup.com/chenhan/boxes/ubuntu-desktop-19.10 :
