@@ -1,0 +1,13 @@
+- name: Configure keyboard shortcuts
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
+      value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/name"
+      value: "'Tilix Quake mode'"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/command"
+      value: "'tilix --quake'"
+    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/binding"
+      value: "'<Ctrl><Shift>space'"

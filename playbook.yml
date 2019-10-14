@@ -6,6 +6,14 @@
   roles:
     - common
     - git
+
+    # Environment
+    - python3
     - java
+
+    # Utils
     - zsh
     - tilix
+
+    # System settings
+    - gnome
