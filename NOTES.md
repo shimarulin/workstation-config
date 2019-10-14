@@ -1,5 +1,10 @@
 - https://opensource.com/article/18/5/manage-your-workstation-ansible-part-3
 
+Related playbooks:
+
+- https://github.com/Uberi/setup-machine
+- https://git.todevski.com/ansible/playbooks/workstation
+
 ## Common variables
 
 - `username` - username
