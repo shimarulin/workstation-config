@@ -14,3 +14,7 @@
       value: "100"
     - key: "/com/gexperts/Tilix/theme-variant"
       value: "'dark'"
+    - key: "/com/gexperts/Tilix/keybindings/terminal-copy"
+      value: "'<Ctrl>c'"
+    - key: "/com/gexperts/Tilix/keybindings/terminal-paste"
+      value: "'<Ctrl>v'"
