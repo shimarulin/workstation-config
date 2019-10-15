@@ -4,6 +4,7 @@ Related playbooks:
 
 - https://github.com/Uberi/setup-machine
 - https://git.todevski.com/ansible/playbooks/workstation
+- https://github.com/toozej/ansible
 
 ## Common variables
 
