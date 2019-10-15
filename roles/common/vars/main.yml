@@ -1,5 +1,13 @@
 ---
 # vars file for common
 common_packages:
+  # Network utils
   - curl
+
+  # Settings
   - dconf-editor
+
+  # Data compression utils
+  - tar
+  - gzip
+  - rar
