@@ -11,3 +11,4 @@ common_packages:
   - tar
   - gzip
   - rar
+  - unrar
