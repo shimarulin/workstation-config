@@ -1,3 +1,24 @@
+## Modules
+
+### dconf
+
+```yaml
+- name: dconf settings
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    # Number
+    - key: "/org/gnome/meld/indent-width"
+      value: 2
+    # Boolean
+    - key: "/org/gnome/meld/insert-spaces-instead-of-tabs"
+      value: 'true'
+    # String
+    - key: "/org/gnome/meld/style-scheme"
+      value: "'solarized-light'"
+```
+
 - https://opensource.com/article/18/5/manage-your-workstation-ansible-part-3
 
 Related playbooks:
