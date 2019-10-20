@@ -91,3 +91,6 @@ cookiecutter --output-dir /home -f templates/cookiecutterrc
     ```
 2. Запускаем плейбук
 
+## CLI helper
+
+Скрипт `setup` содержит в себе сокращения для команд `cookiecutter`
