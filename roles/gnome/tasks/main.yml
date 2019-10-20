@@ -1,4 +1,8 @@
 ---
 # tasks file for gnome
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ gnome_packages }}"
 
 - include_tasks: shortcuts.yml

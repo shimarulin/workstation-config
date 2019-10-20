@@ -15,6 +15,7 @@
     - zsh
     - tilix
     - meld
+    - gpaste
 
     # System settings
     - gnome
