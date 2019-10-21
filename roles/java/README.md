@@ -3,6 +3,13 @@ Role Name
 
 A brief description of the role goes here.
 
+- https://adoptopenjdk.net/installation.html?variant=openjdk11&jvmVariant=hotspot#linux-pkg
+
+- https://stackoverflow.com/questions/52431764/difference-between-openjdk-and-adoptopenjdk
+- https://habr.com/ru/company/haulmont/blog/434790/
+- https://www.linuxuprising.com/2019/04/install-latest-openjdk-12-11-or-8-in.html
+- https://developer.okta.com/blog/2019/01/16/which-java-sdk
+
 Requirements
 ------------
 
