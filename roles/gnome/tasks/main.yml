@@ -5,5 +5,9 @@
   apt:
     name: "{{ gnome_packages }}"
 
-- include_tasks: shortcuts.yml
+#- name: Restart Gnome Shell
+#  shell: export DISPLAY=:0.0 && gnome-shell --replace
+
 - include_tasks: extensions.yml
+- include_tasks: appearance.yml
+- include_tasks: shortcuts.yml

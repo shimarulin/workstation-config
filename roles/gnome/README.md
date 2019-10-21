@@ -3,6 +3,9 @@ Role Name
 
 A brief description of the role goes here.
 
+- https://github.com/arc-design/arc-theme
+- https://github.com/snwh/paper-icon-theme
+
 Requirements
 ------------
 
