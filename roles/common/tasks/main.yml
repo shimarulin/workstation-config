@@ -9,3 +9,4 @@
 - name: get username
   command: whoami
   register: username
+  changed_when: False
