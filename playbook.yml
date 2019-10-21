@@ -17,8 +17,9 @@
     - meld
     - gpaste
 
-    # System settings
+    # System settings and tools
     - gnome
+    - multibootusb
 
     # Security tools
     - enpass
