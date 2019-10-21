@@ -1,0 +1,6 @@
+---
+# tasks file for gpaste
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ gpaste_packages }}"

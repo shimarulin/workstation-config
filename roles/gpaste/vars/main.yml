@@ -1,0 +1,5 @@
+---
+# vars file for gpaste
+gpaste_packages:
+  - gpaste
+  - gnome-shell-extensions-gpaste

@@ -1,0 +1,4 @@
+- name: Enable extensions
+  dconf:
+    key: "/org/gnome/shell/enabled-extensions"
+    value: "['GPaste@gnome-shell-extensions.gnome.org']"

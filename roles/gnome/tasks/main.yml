@@ -6,3 +6,4 @@
     name: "{{ gnome_packages }}"
 
 - include_tasks: shortcuts.yml
+- include_tasks: extensions.yml
