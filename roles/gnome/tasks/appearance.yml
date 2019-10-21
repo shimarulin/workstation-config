@@ -22,6 +22,18 @@
       - arc-theme
       - papirus-icon-theme
 
+- name: Install the flatpak themes from flathub
+  become: yes
+  flatpak:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - org.gtk.Gtk3theme.Arc-Darker
+    - org.gtk.Gtk3theme.Arc-Darker-solid
+  register: flatpak_theme_out
+  changed_when: flatpak_theme_out.stderr != ''
+
+
 - name: configure themes
   dconf:
     key: "{{ item.key }}"
