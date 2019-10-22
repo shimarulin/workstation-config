@@ -31,7 +31,7 @@
     - org.gtk.Gtk3theme.Arc-Darker
     - org.gtk.Gtk3theme.Arc-Darker-solid
   register: flatpak_theme_out
-  changed_when: flatpak_theme_out.stderr != ''
+  changed_when: flatpak_theme_out.stderr == ''
 
 
 - name: configure themes
