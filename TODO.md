@@ -1,7 +1,5 @@
 - [ ] remove snap packages
-- [ ] install Flatpack
 - [ ] install oh-my-zsh
-- [ ] install and setup Tilix
 - [ ] install NodeJS via NVM
 - [ ] install VirtualBox
 - [ ] install Vagrant
@@ -9,6 +7,4 @@
 - [ ] setup Gnome
 - [ ] setup Gedit
 - [ ] setup Nautilus
-- [ ] install Enpass
 - [ ] install SparkleShare
-- [ ] install ulauncher

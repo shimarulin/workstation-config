@@ -14,6 +14,15 @@ cookiecutter -f templates/vars
 
 ## Development
 
+### Tools
+
+Documentation:
+
+- https://docs.ansible.com/ansible/latest/index.html
+- https://cookiecutter.readthedocs.io/en/latest/readme.html
+- https://argbash.readthedocs.io/en/stable/
+- https://www.vagrantup.com/docs/
+
 ```bash
 # Install packages
 pip3 install -U python-vagrant
