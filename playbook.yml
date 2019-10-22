@@ -25,3 +25,6 @@
 
     # Security tools
     - enpass
+
+    # Network
+    - chrome
