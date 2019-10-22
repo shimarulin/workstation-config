@@ -17,10 +17,11 @@
     - tilix
     - meld
     - gpaste
+    - ulauncher
+    - multibootusb
 
     # System settings and tools
     - gnome
-    - multibootusb
 
     # Security tools
     - enpass
