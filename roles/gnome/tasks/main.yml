@@ -1,13 +1,10 @@
 ---
 # tasks file for gnome
-- name: install dependencies
-  become: yes
-  apt:
-    name: "{{ gnome_packages }}"
 
 #- name: Restart Gnome Shell
 #  shell: export DISPLAY=:0.0 && gnome-shell --replace
 
+- include_tasks: applications.yml
 - include_tasks: extensions.yml
 - include_tasks: appearance.yml
 - include_tasks: shortcuts.yml

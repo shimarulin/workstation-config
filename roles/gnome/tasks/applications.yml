@@ -1,0 +1,16 @@
+- name: remove snap packages
+  become: yes
+  snap:
+    name:
+      - gnome-calculator
+      - gnome-characters
+      - gnome-logs
+    state: absent
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ gnome_packages }}"
+
+
+- include_tasks: applications/gedit.yml
