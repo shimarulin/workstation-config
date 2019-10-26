@@ -1,0 +1,18 @@
+- name: add AdoptOpenJDK key
+  become: yes
+  apt_key:
+    url: https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
+    state: present
+
+- name: add AdoptOpenJDK repository
+  become: yes
+  apt_repository:
+    repo: deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ disco main
+    filename: adoptopenjdk
+    update_cache: yes
+    state: present
+
+- name: installAdoptOpenJDK
+  become: yes
+  apt:
+    name: adoptopenjdk-13-hotspot

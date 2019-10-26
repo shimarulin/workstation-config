@@ -2,3 +2,4 @@
 # file: group_vars/all
 git_user_name: {{ cookiecutter.git_user_name }}
 git_user_email: {{ cookiecutter.git_user_email }}
+java_provider: {{ cookiecutter.java_provider }}
