@@ -28,3 +28,6 @@
 
     # Network
     - chrome
+
+    # Virtual environment
+    - docker
