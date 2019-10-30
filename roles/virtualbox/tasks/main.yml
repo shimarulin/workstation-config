@@ -1,0 +1,9 @@
+---
+# tasks file for virtualbox
+- import_tasks: oracle.yml
+  when: virtualbox_provider == 'Oracle'
+  changed_when: False
+
+- import_tasks: system.yml
+  when: virtualbox_provider == 'System'
+  changed_when: False

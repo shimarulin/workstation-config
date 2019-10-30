@@ -1,0 +1,17 @@
+- name: accept Virtualbox Extension Pack license
+  become: yes
+  debconf:
+    name: virtualbox-ext-pack
+    question: virtualbox-ext-pack/license
+    value: 'true'
+    vtype: select
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ virtualbox_system_packages }}"
+    update_cache: yes
+  vars:
+    virtualbox_system_packages:
+      - virtualbox
+      - virtualbox-ext-pack
