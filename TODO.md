@@ -1,8 +1,5 @@
-- [ ] remove snap packages
 - [ ] install oh-my-zsh
 - [ ] install NodeJS via NVM
-- [ ] install VirtualBox
-- [ ] install Vagrant
 - [ ] install Podman
 - [ ] setup Gnome
 - [ ] setup Gedit
