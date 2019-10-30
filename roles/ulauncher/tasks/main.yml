@@ -1,22 +1,21 @@
 ---
 # tasks file for ulauncher
-# TODO: watch issue [Ubuntu PPA is missing the Eoan package](https://github.com/Ulauncher/Ulauncher/issues/438)
-#- name: add Ulauncher PPA
-#  become: yes
-#  apt_repository:
-#    repo: ppa:agornostal/ulauncher
-#    update_cache: yes
-#    state: present
-#
-#- name: install dependencies
-#  become: yes
-#  apt:
-#    name: "{{ ulauncher_packages }}"
+- name: add Ulauncher PPA
+  become: yes
+  apt_repository:
+    repo: ppa:agornostal/ulauncher
+    update_cache: yes
+    state: present
 
 - name: install dependencies
   become: yes
   apt:
-    deb: https://github.com/Ulauncher/Ulauncher/releases/download/5.3.0/ulauncher_5.3.0_all.deb
+    name: "{{ ulauncher_packages }}"
+
+#- name: install dependencies
+#  become: yes
+#  apt:
+#    deb: https://github.com/Ulauncher/Ulauncher/releases/download/5.3.0/ulauncher_5.3.0_all.deb
 
 - name: copy settings
   copy:
