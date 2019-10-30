@@ -32,3 +32,4 @@
     # Virtual environment
     - docker
     - virtualbox
+    - vagrant
