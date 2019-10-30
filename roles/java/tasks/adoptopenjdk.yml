@@ -1,4 +1,4 @@
-- name: add AdoptOpenJDK key
+- name: add AdoptOpenJDK GPG key
   become: yes
   apt_key:
     url: https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public
@@ -12,7 +12,7 @@
     update_cache: yes
     state: present
 
-- name: installAdoptOpenJDK
+- name: install AdoptOpenJDK
   become: yes
   apt:
     name: adoptopenjdk-13-hotspot

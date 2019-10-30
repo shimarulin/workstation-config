@@ -1,12 +1,12 @@
 ---
 # tasks file for chrome
-- name: add Google Chrome key
+- name: add GPG key
   become: yes
   apt_key:
     url: https://dl-ssl.google.com/linux/linux_signing_key.pub
     state: present
 
-- name: add Google Chrome repository
+- name: add repository
   become: yes
   apt_repository:
     repo: deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
@@ -14,7 +14,7 @@
     update_cache: yes
     state: present
 
-- name: install Google Chrome
+- name: install dependencies
   become: yes
   apt:
     name: "{{ chrome_packages }}"

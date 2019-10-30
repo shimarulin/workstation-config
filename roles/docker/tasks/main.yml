@@ -1,6 +1,6 @@
 ---
 # tasks file for docker
-- name: add gpg key
+- name: add GPG key
   become: yes
   apt_key:
     url: https://download.docker.com/linux/ubuntu/gpg

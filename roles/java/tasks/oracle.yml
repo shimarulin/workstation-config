@@ -1,11 +1,11 @@
-- name: add Oracle Java PPA
+- name: add Oracle Java Installer repository
   become: yes
   apt_repository:
     repo: ppa:linuxuprising/java
     update_cache: yes
     state: present
 
-- name: accept Oracle license
+- name: accept Oracle Java license
   become: yes
   debconf:
     name: oracle-java12-installer
@@ -13,7 +13,7 @@
     value: 'true'
     vtype: select
 
-- name: install dependencies
+- name: install Oracle Java 13
   become: yes
   apt:
     name: oracle-java13-installer

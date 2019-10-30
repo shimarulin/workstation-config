@@ -1,6 +1,6 @@
 ---
 # tasks file for git
-- name: install git dependencies
+- name: install dependencies
   become: yes
   apt:
     name: "{{ git_packages }}"

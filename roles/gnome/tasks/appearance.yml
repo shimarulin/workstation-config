@@ -1,10 +1,10 @@
-- name: add arc-theme PPA
+- name: add Arc Theme repository
   become: yes
   apt_repository:
     repo: ppa:fossfreedom/arc-gtk-theme-daily
     state: present
 
-- name: add Papirus icon theme PPA
+- name: add Papirus icon theme repository
   become: yes
   apt_repository:
     repo: ppa:papirus/papirus

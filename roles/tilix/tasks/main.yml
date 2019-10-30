@@ -1,6 +1,6 @@
 ---
 # tasks file for tilix
-- name: install Tilix
+- name: install dependencies
   become: yes
   apt:
     name: "{{ tilix_packages }}"

@@ -1,12 +1,12 @@
 ---
 # tasks file for enpass
-- name: add Enpass key
+- name: add GPG key
   become: yes
   apt_key:
     url: https://apt.enpass.io/keys/enpass-linux.key
     state: present
 
-- name: add Enpass repo
+- name: add repository
   become: yes
   apt_repository:
     repo: deb https://apt.enpass.io/ stable main
@@ -14,7 +14,7 @@
     update_cache: yes
     state: present
 
-- name: install Enpass
+- name: install dependencies
   become: yes
   apt:
     name: "{{ enpass_packages }}"

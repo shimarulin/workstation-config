@@ -1,6 +1,6 @@
 ---
 # tasks file for multibootusb
-- name: install multibootusb
+- name: install dependencies
   become: yes
   apt:
     deb: https://github.com/mbusb/multibootusb/releases/download/v9.2.0/python3-multibootusb_9.2.0-1_all.deb
