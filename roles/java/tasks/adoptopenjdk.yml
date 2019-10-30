@@ -7,7 +7,7 @@
 - name: add AdoptOpenJDK repository
   become: yes
   apt_repository:
-    repo: deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ disco main
+    repo: "deb https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/ {{ lsb_release.stdout }} main"
     filename: adoptopenjdk
     update_cache: yes
     state: present
