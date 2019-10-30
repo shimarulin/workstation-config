@@ -1,5 +1,13 @@
 ---
 # tasks file for virtualbox
+- name: accept Virtualbox Extension Pack license
+  become: yes
+  debconf:
+    name: virtualbox-ext-pack
+    question: virtualbox-ext-pack/license
+    value: 'true'
+    vtype: select
+
 - import_tasks: oracle.yml
   when: virtualbox_provider == 'Oracle'
   changed_when: False

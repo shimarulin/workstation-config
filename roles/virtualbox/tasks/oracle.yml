@@ -1,16 +1,16 @@
-- name: add gpg key 2016
+- name: add oracle_vbox_2016 GPG key
   become: yes
   apt_key:
     url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
     state: present
 
-- name: add gpg key
+- name: add oracle_vbox GPG key
   become: yes
   apt_key:
     url: https://www.virtualbox.org/download/oracle_vbox.asc
     state: present
 
-- name: add repository
+- name: add Oracle Virtualbox repository
   become: yes
   apt_repository:
     # repo: "deb [arch=amd64] https://download.virtualbox.org/virtualbox/debian {{ lsb_release.stdout }} contrib"
@@ -19,7 +19,11 @@
     update_cache: yes
     state: present
 
-- name: install dependencies
+- name: install Oracle Virtualbox
   become: yes
   apt:
-    name: "virtualbox-6.0"
+    name: "{{ virtualbox_oracle_packages }}"
+  vars:
+    virtualbox_oracle_packages:
+      - virtualbox-6.0
+      - virtualbox-ext-pack
