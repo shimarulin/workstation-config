@@ -5,3 +5,4 @@ podman_packages:
   - podman
   - skopeo
   - buildah
+  - conmon
