@@ -17,6 +17,7 @@ Documentation:
 
 - [Ansible Documentation](https://docs.ansible.com/ansible/latest/index.html)
   - [Ansible Module Index](https://docs.ansible.com/ansible/latest/modules/modules_by_category.html)
+  - [Vagrant Guide](https://docs.ansible.com/ansible/latest/scenario_guides/guide_vagrant.html)
 - [Cookiecutter documentation](https://cookiecutter.readthedocs.io/en/latest/readme.html)
 - [Argbash documentation](https://argbash.readthedocs.io/en/stable/)
 - [Vagrant Documentation](https://www.vagrantup.com/docs/)
