@@ -1,0 +1,7 @@
+---
+# vars file for podman
+podman_packages:
+  - uidmap
+  - podman
+  - skopeo
+  - buildah
