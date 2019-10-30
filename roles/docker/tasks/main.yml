@@ -23,7 +23,6 @@
 - name: postinstall setup
   become: yes
   command: "usermod -aG docker {{ username.stdout }}"
-  register: username
   changed_when: False
 
 - name: check that the Docker Compose already installed
