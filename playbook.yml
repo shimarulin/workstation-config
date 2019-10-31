@@ -4,6 +4,7 @@
 - name: apply common configuration to all nodes
   hosts: all
   roles:
+    # Common tasks
     - common
     - git
     - flatpak
@@ -12,15 +13,15 @@
     - python3
     - java
 
-    # Utils
+    # Shell
     - zsh
+
+    # System settings and tools
+    - ubuntu
     - tilix
     - meld
     - gpaste
     - ulauncher
-    - multibootusb
-
-    # System settings and tools
     - gnome
 
     # Security tools
@@ -33,3 +34,6 @@
     - docker
     - virtualbox
     - vagrant
+
+    # Additional tools
+    - multibootusb
