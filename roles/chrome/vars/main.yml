@@ -1,0 +1,4 @@
+---
+# vars file for chrome
+chrome_packages:
+  - google-chrome-stable

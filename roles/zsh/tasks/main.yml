@@ -1,0 +1,33 @@
+---
+# tasks file for zsh
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ zsh_packages }}"
+
+- name: check that the zplugin exists
+  stat:
+    path: ~/.zplugin/bin/zplugin.zsh
+  register: zsh_zplugin_stat_result
+
+- name: install zplugin
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
+  when: zsh_zplugin_stat_result.stat.exists == false
+
+- name: check that the .zshenv file exists
+  stat:
+    path: ~/.zshenv
+  register: zsh_zshenv_stat_result
+
+- name: configure ~/.zshenv
+  copy:
+    src: .zshenv
+    dest: ~/.zshenv
+  when: zsh_zshenv_stat_result.stat.exists == false
+
+# "username" variable is defined in "common" role
+- name: Set zsh as default shell
+  user:
+    name: "{{ username.stdout }}"
+    shell: /bin/zsh
+  become: true

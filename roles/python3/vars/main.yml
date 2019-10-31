@@ -1,0 +1,7 @@
+---
+# vars file for python3
+python3_packages:
+  - python3-pip
+
+python3_pip3_packages:
+  - psutil

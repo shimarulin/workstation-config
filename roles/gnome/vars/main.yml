@@ -1,0 +1,9 @@
+---
+# vars file for gnome
+gnome_packages:
+  - gnome-tweaks
+  - gnome-shell-extensions
+  - chrome-gnome-shell
+  - gnome-calculator
+  - gnome-characters
+  - gnome-logs

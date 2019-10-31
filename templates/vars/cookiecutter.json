@@ -1,0 +1,7 @@
+{
+  "git_user_name": "John Doe",
+  "git_user_email": "username@example.com",
+  "vars": ["group_vars", "host_vars"],
+  "java_provider": ["AdoptOpenJDK","Oracle"],
+  "virtualbox_provider": ["System","Oracle"]
+}

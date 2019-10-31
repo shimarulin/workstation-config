@@ -1,0 +1,9 @@
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ virtualbox_system_packages }}"
+    update_cache: yes
+  vars:
+    virtualbox_system_packages:
+      - virtualbox
+      - virtualbox-ext-pack

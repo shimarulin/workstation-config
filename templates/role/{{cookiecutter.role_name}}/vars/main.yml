@@ -1,0 +1,4 @@
+---
+# vars file for {{ cookiecutter.role_name }}
+{{ cookiecutter.role_name|replace('-', '_') }}_packages:
+  - {{ cookiecutter.role_name }}

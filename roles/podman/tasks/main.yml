@@ -1,0 +1,14 @@
+---
+# tasks file for podman
+- name: add repository
+  become: yes
+  apt_repository:
+    repo: ppa:projectatomic/ppa
+    update_cache: yes
+    state: present
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ podman_packages }}"
+    # state: present # by default

@@ -1,0 +1,12 @@
+---
+# tasks file for python3
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ python3_packages }}"
+    # state: present # by default
+
+- name: install python3 packages
+  pip:
+    name: "{{ python3_pip3_packages }}"
+    extra_args: --user

@@ -1,0 +1,5 @@
+---
+# vars file for flatpak
+flatpak_packages:
+  - flatpak
+  - gnome-software-plugin-flatpak

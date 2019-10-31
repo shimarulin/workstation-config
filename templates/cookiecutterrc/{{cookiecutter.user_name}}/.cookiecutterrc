@@ -1,0 +1,6 @@
+default_context:
+  user_name: "{{ cookiecutter.user_name }}"
+  full_user_name: "{{ cookiecutter.full_user_name }}"
+  author: "{{ cookiecutter.git_user_name }}"
+  git_user_name: "{{ cookiecutter.git_user_name }}"
+  git_user_email: "{{ cookiecutter.git_user_email }}"

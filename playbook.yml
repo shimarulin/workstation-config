@@ -1,0 +1,39 @@
+---
+# This playbook deploys the whole application stack.
+
+- name: apply common configuration to all nodes
+  hosts: all
+  roles:
+    # Common tasks
+    - common
+    - git
+    - flatpak
+
+    # Environment
+    - python3
+    - java
+
+    # Shell
+    - zsh
+
+    # System settings and tools
+    - ubuntu
+    - tilix
+    - meld
+    - gpaste
+    - ulauncher
+    - gnome
+
+    # Security tools
+    - enpass
+
+    # Network
+    - chrome
+
+    # Virtual environment
+    - docker
+    - virtualbox
+    - vagrant
+
+    # Additional tools
+    - multibootusb

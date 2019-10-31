@@ -1,0 +1,24 @@
+---
+# tasks file for meld
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ meld_packages }}"
+
+- name: configure
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/meld/indent-width"
+      value: 2
+    - key: "/org/gnome/meld/insert-spaces-instead-of-tabs"
+      value: 'true'
+    - key: "/org/gnome/meld/show-line-numbers"
+      value: 'true'
+    - key: "/org/gnome/meld/highlight-current-line"
+      value: 'true'
+    - key: "/org/gnome/meld/highlight-syntax"
+      value: 'true'
+    - key: "/org/gnome/meld/style-scheme"
+      value: "'solarized-light'"

@@ -1,0 +1,4 @@
+---
+# vars file for git
+git_packages:
+  - git

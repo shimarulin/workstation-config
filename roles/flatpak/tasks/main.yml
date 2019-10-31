@@ -1,0 +1,14 @@
+---
+# tasks file for flatpak
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ flatpak_packages }}"
+    # state: present # by default
+
+- name: add the flathub repository
+  become: yes
+  flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://flathub.org/repo/flathub.flatpakrepo

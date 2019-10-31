@@ -1,0 +1,10 @@
+---
+# tasks file for ubuntu
+- name: remove snap packages
+  become: yes
+  snap:
+    name:
+      - gnome-calculator
+      - gnome-characters
+      - gnome-logs
+    state: absent

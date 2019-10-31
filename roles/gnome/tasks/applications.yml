@@ -1,0 +1,7 @@
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ gnome_packages }}"
+
+
+- include_tasks: applications/gedit.yml

@@ -1,0 +1,4 @@
+---
+# defaults file for git
+git_user_name: "Developer"
+git_user_email: "developer@example.com"

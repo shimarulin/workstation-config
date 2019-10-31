@@ -1,0 +1,38 @@
+---
+# tasks file for docker
+- name: add GPG key
+  become: yes
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    state: present
+
+- name: add repository
+  become: yes
+  apt_repository:
+#    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ lsb_release.stdout }} stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable"
+    filename: docker
+    update_cache: yes
+    state: present
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ docker_packages }}"
+
+- name: postinstall setup
+  become: yes
+  command: "usermod -aG docker {{ username.stdout }}"
+  changed_when: False
+
+- name: check that the Docker Compose already installed
+  stat:
+    path: /usr/local/bin/docker-compose
+  register: docker_compose_stat_result
+
+- name: install Docker Compose
+  become: yes
+  shell: |
+    curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+  when: docker_compose_stat_result.stat.exists == false

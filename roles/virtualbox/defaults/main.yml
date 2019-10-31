@@ -1,0 +1,3 @@
+---
+# defaults file for virtualbox
+virtualbox_provider: System

@@ -1,0 +1,55 @@
+- name: add Arc Theme repository
+  become: yes
+  apt_repository:
+    repo: ppa:fossfreedom/arc-gtk-theme-daily
+    state: present
+
+- name: add Papirus icon theme repository
+  become: yes
+  apt_repository:
+    repo: ppa:papirus/papirus
+    state: present
+
+- name: install appearance dependencies
+  become: yes
+  apt:
+    name: "{{ appearance_packages }}"
+    update_cache: yes
+  vars:
+    appearance_packages:
+      # Optional name: arc-solid-theme
+      - arc-solid-theme
+      - arc-theme
+      - papirus-icon-theme
+
+- name: Install the flatpak themes from flathub
+  become: yes
+  flatpak:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - org.gtk.Gtk3theme.Arc-Darker
+    - org.gtk.Gtk3theme.Arc-Darker-solid
+  register: flatpak_theme_out
+  changed_when: flatpak_theme_out.stderr == ''
+
+
+- name: configure themes
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    - key: "/org/gnome/shell/extensions/user-theme/name"
+      # 'Arc-Dark-solid'
+      value: "'Arc-Dark'"
+    - key: "/org/gnome/desktop/interface/gtk-theme"
+      # 'Arc-Darker-solid'
+      value: "'Arc-Darker'"
+    - key: "/org/gnome/desktop/interface/icon-theme"
+      value: "'Papirus'"
+#    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/name"
+#      value: "'Tilix Quake mode'"
+#    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/command"
+#      value: "'tilix --quake'"
+#    - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/binding"
+#      value: "'<Ctrl><Shift>space'"
