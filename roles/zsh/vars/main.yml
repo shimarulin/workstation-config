@@ -2,3 +2,4 @@
 # vars file for zsh
 zsh_packages:
   - zsh
+  - sqlite3
