@@ -25,6 +25,11 @@
     dest: ~/.zshenv
   when: zsh_zshenv_stat_result.stat.exists == false
 
+- name: configure ~/.zshrc
+  copy:
+    src: .zshrc
+    dest: ~/.zshrc
+
 # "username" variable is defined in "common" role
 - name: Set zsh as default shell
   user:
