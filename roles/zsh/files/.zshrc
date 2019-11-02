@@ -105,3 +105,8 @@ ZSH_AUTOSUGGEST_STRATEGY=histdb_top
 zplugin ice wait atload"_zsh_autosuggest_start" lucid
 zplugin light zsh-users/zsh-autosuggestions
 ### End of zsh-autosuggestions chunk
+
+### zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
+### WARNING!!! zsh-syntax-highlighting must be sourced at the end of the .zshrc file
+zplugin load zsh-users/zsh-syntax-highlighting
+### End of zsh-syntax-highlighting chunk

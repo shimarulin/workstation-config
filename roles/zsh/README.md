@@ -37,6 +37,7 @@ Zplugin/zsh resources:
 - https://www.reddit.com/r/zsh/
 - http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html
 - https://www.reddit.com/r/zsh/comments/ak0vgi/a_comparison_of_all_the_zsh_plugin_mangers_i_used/
+- https://www.reddit.com/r/zsh/comments/9760xt/solving_some_performance_issues_shown_with_zprof/
 
 Zplugin examples:
 
