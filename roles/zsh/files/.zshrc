@@ -18,12 +18,12 @@ zplugin load zplugin/zplugin-console
 ### https://github.com/zdharma/zplugin/issues/54#issuecomment-401884886
 local _ZSHRC_OMZ_LIBS=(
 #   compfix.zsh
-#   completion.zsh
-#   directories.zsh
+  completion.zsh
+  directories.zsh
 #   functions.zsh
 #   grep.zsh
   history.zsh
-#   key-bindings.zsh
+  key-bindings.zsh
 #   misc.zsh
 #   spectrum.zsh
 #   termsupport.zsh
@@ -105,6 +105,11 @@ ZSH_AUTOSUGGEST_STRATEGY=histdb_top
 zplugin ice wait atload"_zsh_autosuggest_start" lucid
 zplugin light zsh-users/zsh-autosuggestions
 ### End of zsh-autosuggestions chunk
+
+### zsh-completions (https://github.com/zsh-users/zsh-completions)
+zplugin ice wait blockf atpull'zplugin creinstall -q .' lucid
+zplugin light zsh-users/zsh-completions
+### End of zsh-completions chunk
 
 ### fast-syntax-highlighting (https://github.com/zdharma/fast-syntax-highlighting)
 zplugin ice wait atinit"zpcompinit; zpcdreplay" lucid
