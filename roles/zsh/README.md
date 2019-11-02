@@ -19,7 +19,7 @@ Plugins
 - [Zplugin Console](https://github.com/zplugin/zplugin-console) - A curses consolette for Zsh-Zplugin plugin manager
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-histdb](https://github.com/larkery/zsh-histdb)
-- [Powerlevel10k](A fast reimplementation of Powerlevel9k ZSH theme) - A fast reimplementation of Powerlevel9k ZSH theme
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - A fast reimplementation of Powerlevel9k ZSH theme
 
 Tools: 
 
