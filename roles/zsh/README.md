@@ -62,8 +62,15 @@ Common articles:
 - [Dev Diaries \| Terminal History Auto Suggestions As You Type With Oh My Zsh](https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/)
 - [5 tips to improve productivity with zsh \| Opensource.com](https://opensource.com/article/18/9/tips-productivity-zsh)
 
+## Key binding
 
-## Improved zsh command history
+Command to print key codes: `showkey -a`. Some references:
+
+- https://jdhao.github.io/2019/06/13/zsh_bind_keys/
+- https://wiki.archlinux.org/index.php/Zsh#Key_bindings
+- https://www.zsh.org/mla/users/2014/msg00266.html
+
+## Improved zsh command history and complete
 
 Plugins:
 
@@ -75,13 +82,36 @@ Articles:
 
 - https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/
 
----
+## Improved zsh command history and complete with fuzzy search by [fzf](https://github.com/junegunn/fzf)
+
+При вводе отображается подходящая команда через 
+[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) из
+запроса к [zsh-histdb](https://github.com/larkery/zsh-histdb). Реверсивный поиск
+работает с [fzf](https://github.com/junegunn/fzf), который фильтрует подходящие 
+запросы, отсортированные по времени и месту из `zsh-histdb`.
+
+- https://github.com/larkery/zsh-histdb/issues/25
+- https://github.com/m42e/zsh-histdb-fzf
+
+## Theming
+
+- https://github.com/romkatv/powerlevel10k/
+- https://gist.github.com/romkatv
+
+### Symbols
+
+- ❯
+- ➜
+
+--------------------------------------------------------------------------------
+
 - 
 - https://github.com/robbyrussell/oh-my-zsh
 
-More plugins
+More plugins and tools
 
 - https://github.com/unixorn/awesome-zsh-plugins
+- https://github.com/alebcay/awesome-shell
 
 see also some Ansible roles
 
