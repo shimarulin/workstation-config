@@ -26,7 +26,7 @@
 
 - name: copy powerlevel10k config
   copy:
-    src: powerlevel10k/multiline_without_frame/.p10k.zsh
+    src: powerlevel10k/multiline_slant/.p10k.zsh
     dest: ~/.p10k.zsh
 
 # "username" variable is defined in "common" role
