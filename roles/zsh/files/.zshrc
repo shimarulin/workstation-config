@@ -4,24 +4,15 @@ autoload -Uz _zplugin
 (( ${+_comps} )) && _comps[zplugin]=_zplugin
 ### End of Zplugin installer's chunk
 
-### https://github.com/zdharma/zplugin-crasis
+### zplugin-crasis (https://github.com/zdharma/zplugin-crasis)
 zplugin light zdharma/zui
 zplugin light zdharma/zplugin-crasis
+### End of zplugin-crasis chunk
 
-### https://github.com/zplugin/zplugin-console
+### zplugin-console (https://github.com/zplugin/zplugin-console)
 zplugin ice wait lucid
 zplugin load zplugin/zplugin-console
-
-### https://github.com/zsh-users/zsh-autosuggestions
-# zplugin ice wait atload"_zsh_autosuggest_start" lucid
-# zplugin light zsh-users/zsh-autosuggestions
-
-### https://github.com/larkery/zsh-histdb
-# zplugin light larkery/zsh-histdb
-
-# source "$HOME/.zplugin/plugins/larkery---zsh-histdb/sqlite-history.zsh"
-# autoload -Uz add-zsh-hook
-# add-zsh-hook precmd histdb-update-outcome
+### End of zplugin-console chunk
 
 ### Oh-My-Zsh
 ### https://github.com/zdharma/zplugin/issues/54#issuecomment-401884886
@@ -43,3 +34,71 @@ zplugin ice from"gh" pick"lib/git.zsh" nocompletions blockf \
   atload'!local f; for f in ${_ZSHRC_OMZ_LIBS}; do source lib/$f; done' \
   compile"lib/(${(j.|.)_ZSHRC_OMZ_LIBS})"
 zplugin load robbyrussell/oh-my-zsh
+### End of Oh-My-Zsh chunk
+
+### zsh-histdb (https://github.com/larkery/zsh-histdb)
+zplugin light shimarulin/zsh-histdb
+
+# https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/
+show_local_history() {
+    limit="${1:-10}"
+    local query="
+        select history.start_time, commands.argv
+        from history left join commands on history.command_id = commands.rowid
+        left join places on history.place_id = places.rowid
+        where places.dir LIKE '$(sql_escape $PWD)%'
+        order by history.start_time desc
+        limit $limit
+    "
+    results=$(_histdb_query "$query")
+    echo "$results"
+}
+
+search_local_history() {
+    show_local_history 100 | grep "$1"
+}
+### End of zsh-histdb chunk
+
+### zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
+_zsh_autosuggest_strategy_histdb_top() {
+  local query="select commands.argv from
+    history left join commands on history.command_id = commands.rowid
+    left join places on history.place_id = places.rowid
+    where commands.argv LIKE '$(sql_escape $1)%'
+    group by commands.argv
+    order by places.dir != '$(sql_escape $PWD)', count(*) desc limit 1"
+  suggestion=$(_histdb_query "$query")
+}
+
+# https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/
+# Query to pull in the most recent command if anything was found similar
+# in that directory. Otherwise pull in the most recent command used anywhere
+# Give back the command that was used most recently
+_zsh_autosuggest_strategy_histdb_top_fallback() {
+  local query="
+  select commands.argv from
+  history left join commands on history.command_id = commands.rowid
+  left join places on history.place_id = places.rowid
+  where places.dir LIKE
+    case when exists(select commands.argv from history
+    left join commands on history.command_id = commands.rowid
+    left join places on history.place_id = places.rowid
+    where places.dir LIKE '$(sql_escape $PWD)%'
+    AND commands.argv LIKE '$(sql_escape $1)%')
+      then '$(sql_escape $PWD)%'
+      else '%'
+      end
+  and commands.argv LIKE '$(sql_escape $1)%'
+  group by commands.argv
+  order by places.dir LIKE '$(sql_escape $PWD)%' desc,
+    history.start_time desc
+  limit 1"
+  suggestion=$(_histdb_query "$query")
+}
+
+ZSH_AUTOSUGGEST_STRATEGY=histdb_top
+# ZSH_AUTOSUGGEST_STRATEGY=histdb_top_fallback
+
+zplugin ice wait atload"_zsh_autosuggest_start" lucid
+zplugin light zsh-users/zsh-autosuggestions
+### End of zsh-autosuggestions chunk
