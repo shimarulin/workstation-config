@@ -106,7 +106,7 @@ zplugin ice wait atload"_zsh_autosuggest_start" lucid
 zplugin light zsh-users/zsh-autosuggestions
 ### End of zsh-autosuggestions chunk
 
-### zsh-syntax-highlighting (https://github.com/zsh-users/zsh-syntax-highlighting)
-### WARNING!!! zsh-syntax-highlighting must be sourced at the end of the .zshrc file
-zplugin load zsh-users/zsh-syntax-highlighting
-### End of zsh-syntax-highlighting chunk
+### fast-syntax-highlighting (https://github.com/zdharma/fast-syntax-highlighting)
+zplugin ice wait atinit"zpcompinit; zpcdreplay" lucid
+zplugin light zdharma/fast-syntax-highlighting
+### End of fast-syntax-highlighting chunk
