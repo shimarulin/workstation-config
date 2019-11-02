@@ -115,3 +115,11 @@ zplugin light zsh-users/zsh-completions
 zplugin ice wait atinit"zpcompinit; zpcdreplay" lucid
 zplugin light zdharma/fast-syntax-highlighting
 ### End of fast-syntax-highlighting chunk
+
+### powerlevel10k
+zplugin ice depth=1
+zplugin light romkatv/powerlevel10k
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+### End of powerlevel10k chunk

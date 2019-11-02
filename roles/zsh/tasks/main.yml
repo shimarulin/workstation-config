@@ -24,6 +24,11 @@
     src: .zshrc
     dest: ~/.zshrc
 
+- name: copy powerlevel10k config
+  copy:
+    src: powerlevel10k/block/.p10k.zsh
+    dest: ~/.p10k.zsh
+
 # "username" variable is defined in "common" role
 - name: Set zsh as default shell
   user:
