@@ -1,0 +1,7 @@
+---
+# vars file for fonts
+fonts_packages:
+  - fonts-noto-core
+  - fonts-noto-ui-core
+  - fonts-noto-mono
+  - fonts-noto-color-emoji

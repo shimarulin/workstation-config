@@ -1,0 +1,6 @@
+---
+# tasks file for fonts
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ fonts_packages }}"
