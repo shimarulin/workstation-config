@@ -22,7 +22,10 @@
   register: virtualbox_vms_stat_result
 
 - name: create virtualbox machine's folder
-  command: "mkdir -p ~/.local/share/virtualbox-vms"
+  file:
+    path: ~/.local/share/virtualbox-vms
+    state: directory
+    mode: '0755'
   when: virtualbox_vms_stat_result.stat.exists == false
 
 - name: set virtualbox machine's folder

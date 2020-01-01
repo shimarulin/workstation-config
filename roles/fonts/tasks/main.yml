@@ -1,0 +1,24 @@
+---
+# tasks file for fonts
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ fonts_packages }}"
+
+- name: copy font settings
+  become: yes
+  copy:
+    src: 50-noto-color-emoji.conf
+    dest: /etc/fonts/conf.avail/50-noto-color-emoji.conf
+    owner: root
+    group: root
+    mode: '0644'
+
+- name: Create a symbolic link
+  become: yes
+  file:
+    src: /etc/fonts/conf.avail/50-noto-color-emoji.conf
+    dest: /etc/fonts/conf.d/50-noto-color-emoji.conf
+    owner: root
+    group: root
+    state: link
