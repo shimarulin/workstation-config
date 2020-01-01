@@ -1,7 +1,10 @@
 ---
 # vars file for fonts
 fonts_packages:
-  - fonts-noto-core
-  - fonts-noto-ui-core
-  - fonts-noto-mono
+#  - fonts-noto-core
+#  - fonts-noto-ui-core
+#  - fonts-noto-mono
+  # Color emoji
   - fonts-noto-color-emoji
+  # A monochrome emoji for JetBrains IDE's
+  - fonts-symbola

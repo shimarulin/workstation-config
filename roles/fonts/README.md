@@ -3,6 +3,15 @@ ansible-role-fonts
 
 > Setup system fonts
 
+- https://github.com/googlefonts/noto-emoji/issues/36#issuecomment-221853526
+- https://github.com/googlefonts/noto-emoji/issues/36#issuecomment-304551474
+
+```bash
+sudo touch /etc/fonts/conf.d/50-noto-color-emoji.conf
+### sudo gedit /etc/fonts/conf.d/50-noto-color-emoji.conf
+fc-cache -vf
+```
+
 Requirements
 ------------
 
