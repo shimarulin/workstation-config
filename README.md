@@ -12,7 +12,7 @@ Before run playbook you must setup common variables via `setup` script in this r
 Run playbook on localhost
 
 ```bash
-ansible-playbook --ask-become-pass --connection=local --inventory 127.0.0.1, playbook.yml
+ansible-playbook --ask-become-pass playbook.yml
 ```
 
 ## Development

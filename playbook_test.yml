@@ -1,9 +1,0 @@
----
-# This playbook deploys the whole application stack.
-
-- name: apply common configuration to all nodes
-  hosts: all
-  roles:
-    - common
-    - tilix
-    - zsh
