@@ -9,6 +9,12 @@ Before run playbook you must setup common variables via `setup` script in this r
 ./setup --target vars
 ```
 
+Run playbook on localhost
+
+```bash
+ansible-playbook --ask-become-pass playbook.yml
+```
+
 ## Development
 
 ### Tools

@@ -25,5 +25,5 @@
     name: "{{ virtualbox_oracle_packages }}"
   vars:
     virtualbox_oracle_packages:
-      - virtualbox-6.0
-      - virtualbox-ext-pack
+      - virtualbox-6.1
+      # - virtualbox-ext-pack

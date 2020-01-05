@@ -15,3 +15,21 @@
   command: lsb_release -cs
   register: lsb_release
   changed_when: False
+
+- name: create extra fonts directories
+  command: "mkdir -p ~/.local/share/fonts/NerdFonts"
+  changed_when: False
+
+- name: load extra fonts
+  get_url:
+    url: "{{ item.url }}"
+    dest: "{{ item.dest }}"
+  loop:
+    - url: https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf
+      dest: "~/.local/share/fonts/NerdFonts/MesloLGS NF Regular.ttf"
+    - url: https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf
+      dest: "~/.local/share/fonts/NerdFonts/MesloLGS NF Bold.ttf"
+    - url: https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf
+      dest: "~/.local/share/fonts/NerdFonts/MesloLGS NF Italic.ttf"
+    - url: https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf
+      dest: "~/.local/share/fonts/NerdFonts/MesloLGS NF Bold Italic.ttf"

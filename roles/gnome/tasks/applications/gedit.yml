@@ -1,3 +1,12 @@
+---
+- name: install Gedit extensions
+  become: yes
+  apt:
+    name: "{{ gedit_extensions_packages }}"
+  vars:
+    gedit_extensions_packages:
+      - gedit-plugins
+
 - name: copy launcher
   copy:
     src: gedit/org.gnome.gedit.desktop

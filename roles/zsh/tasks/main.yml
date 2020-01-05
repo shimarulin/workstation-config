@@ -14,16 +14,20 @@
   shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
   when: zsh_zplugin_stat_result.stat.exists == false
 
-- name: check that the .zshenv file exists
-  stat:
-    path: ~/.zshenv
-  register: zsh_zshenv_stat_result
-
 - name: configure ~/.zshenv
   copy:
     src: .zshenv
     dest: ~/.zshenv
-  when: zsh_zshenv_stat_result.stat.exists == false
+
+- name: configure ~/.zshrc
+  copy:
+    src: .zshrc
+    dest: ~/.zshrc
+
+- name: copy powerlevel10k config
+  copy:
+    src: .p10k.zsh
+    dest: ~/.p10k.zsh
 
 # "username" variable is defined in "common" role
 - name: Set zsh as default shell
