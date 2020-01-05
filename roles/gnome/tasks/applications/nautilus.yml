@@ -1,0 +1,9 @@
+---
+- name: install Nautilus extensions
+  become: yes
+  apt:
+    name: "{{ nautilus_extensions_packages }}"
+  vars:
+    nautilus_extensions_packages:
+      - python-nautilus
+      - nautilus-compare
