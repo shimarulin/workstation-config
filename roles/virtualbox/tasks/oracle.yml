@@ -19,6 +19,11 @@
     update_cache: yes
     state: present
 
+- name: install dependencies
+  become: yes
+  apt:
+    deb: http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx5_1.7.0-3ubuntu0.19.04.1_amd64.deb
+
 - name: install Oracle Virtualbox
   become: yes
   apt:
