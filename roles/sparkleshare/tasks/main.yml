@@ -1,0 +1,5 @@
+---
+# tasks file for sparkleshare
+- name: Install the sparkleshare package from flathub
+  flatpak:
+    name: org.sparkleshare.SparkleShare
