@@ -63,11 +63,11 @@ You can configure your variables with `setup` script:
 If you add variables manually, don't forget to change variables template in `templates/vars`. 
 It will used for setup variables before run playbook for setup target environment.
 
-For create new role from template you can run `setup` with `--target vars` or without args
+For create new role from template you can run `setup` with `--target role` or without args
 
 ```bash
 # Create Ansible role
-./setup --target vars
+./setup --target role
 # or
 ./setup
 ```
