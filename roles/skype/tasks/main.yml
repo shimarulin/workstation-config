@@ -10,7 +10,7 @@
   become: yes
   apt_repository:
     repo: deb [arch=amd64] https://repo.skype.com/deb stable main
-    filename: skypeforlinux
+    filename: skype-stable
     update_cache: yes
     state: present
 
