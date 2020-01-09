@@ -39,3 +39,6 @@
     # Additional tools
     - multibootusb
     - sparkleshare
+
+    # Messaging
+    - skype
