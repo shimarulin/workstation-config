@@ -7,3 +7,15 @@ gnome_packages:
   - gnome-calculator
   - gnome-characters
   - gnome-logs
+
+gnome_extensions:
+  - name: sound-output-device-chooser@kgshank.net
+    repo: https://github.com/kgshank/gse-sound-output-device-chooser.git
+
+  - name: mprisindicatorbutton@JasonLG1979.github.io
+    repo: https://github.com/JasonLG1979/gnome-shell-extension-mpris-indicator-button.git
+
+  - name: GPaste@gnome-shell-extensions.gnome.org
+
+  - name: user-theme@gnome-shell-extensions.gcampax.github.com
+
