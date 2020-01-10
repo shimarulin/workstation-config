@@ -3,9 +3,41 @@ ansible-role-zsh
 
 > Install and setup zsh with awesome plugins
 
+## Fonts
+
+- [Powerline fonts](https://github.com/powerline/fonts)
+- [Nerd Fonts](https://www.nerdfonts.com/)
+
+- Powerlevel10k - Recommended: Meslo Nerd Font patched for Powerlevel10k
+
+## Plugin management
+
+- [Zplugin](https://github.com/zdharma/zplugin) - flexible Zsh plugin manager with clean fpath, reports, completion management, turbo mode, services
+- [Crasis](https://github.com/zdharma/zplugin-crasis) - semigraphical .zshrc editor for Zplugin commands
+- [Zplugin Console](https://github.com/zplugin/zplugin-console) - A curses consolette for Zsh-Zplugin plugin manager
+
+## Prompt
+
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- [Spaceship](https://github.com/denysdovhan/spaceship-prompt)
+- [Pure](https://github.com/sindresorhus/pure)
+- [Lambda (Mod) ZSH Theme](https://github.com/halfo/lambda-mod-zsh-theme)
+- [geometry](https://github.com/geometry-zsh/geometry)
+
+## Syntax Highlighting
+
+## Extra features
+
+### [Z](https://github.com/rupa/z)
+
+https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/
+
+---
+
 Todo:
 
 - [ ] command_not_found_handler
+- [ ] https://github.com/dracula/gnome-terminal
 
 Awesome lists:
 
@@ -14,9 +46,6 @@ Awesome lists:
 
 Plugins
 
-- [Zplugin](https://github.com/zdharma/zplugin) - flexible Zsh plugin manager with clean fpath, reports, completion management, turbo mode, services
-- [Crasis](https://github.com/zdharma/zplugin-crasis) - semigraphical .zshrc editor for Zplugin commands
-- [Zplugin Console](https://github.com/zplugin/zplugin-console) - A curses consolette for Zsh-Zplugin plugin manager
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
 - [zsh-histdb](https://github.com/larkery/zsh-histdb)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - A fast reimplementation of Powerlevel9k ZSH theme
@@ -27,7 +56,6 @@ Tools:
 
 Additions:
 
-- [Powerline fonts](https://github.com/powerline/fonts)
 - [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
 
 Zplugin/zsh resources:
@@ -44,6 +72,8 @@ Zplugin examples:
 - http://zdharma.org/zplugin/wiki/Example-Minimal-Setup/
 - https://github.com/zdharma/zplugin-configs
 - https://github.com/black7375/BlaCk-Void-Zsh
+- https://github.com/denysdovhan/spaceship-prompt/issues/651
+- https://snippets.cacher.io/snippet/d8f057bd128fdaed11e6
 
 Common articles:
 
@@ -61,6 +91,7 @@ Common articles:
 - [Configure a beautiful terminal on Unix with Zsh \| Technorage](https://deepu.tech/configure-a-beautiful-terminal-on-unix/)
 - [Dev Diaries \| Terminal History Auto Suggestions As You Type With Oh My Zsh](https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/)
 - [5 tips to improve productivity with zsh \| Opensource.com](https://opensource.com/article/18/9/tips-productivity-zsh)
+- [Awesome Terminal upgrades - Part Three: Manage ZSH plugins using Zplugin - DEV Community 👩‍💻👨‍💻](https://dev.to/misterf/awesome-terminal-upgrades-part-three-manage-zsh-plugins-using-zplugin-1fba)
 
 ## Key binding
 
