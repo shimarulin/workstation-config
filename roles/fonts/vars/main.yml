@@ -8,3 +8,18 @@ fonts_packages:
   - fonts-noto-color-emoji
   # A monochrome emoji for JetBrains IDE's
   - fonts-symbola
+  # Pre-patched and adjusted fonts for usage with the Powerline statusline plugin
+  - fonts-powerline
+
+### Use "url" property for load ZIP archive or "urls" for an array of fonts to load directly
+fonts_remotes:
+  - name: FiraCode
+    url: https://github.com/tonsky/FiraCode/releases/download/2/FiraCode_2.zip
+    path: "/ttf"
+
+  - name: MesloLGS NF
+    urls:
+      - https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Regular.ttf
+      - https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold.ttf
+      - https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Italic.ttf
+      - https://github.com/romkatv/dotfiles-public/raw/master/.local/share/fonts/NerdFonts/MesloLGS%20NF%20Bold%20Italic.ttf
