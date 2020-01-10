@@ -16,9 +16,11 @@
   register: lsb_release
   changed_when: False
 
-- name: create extra fonts directories
-  command: "mkdir -p ~/.local/share/fonts/NerdFonts"
-  changed_when: False
+- name: create extra fonts directories if it does not exist
+  file:
+    path: "~/.local/share/fonts/NerdFonts"
+    state: directory
+    mode: '0755'
 
 - name: load extra fonts
   get_url:
