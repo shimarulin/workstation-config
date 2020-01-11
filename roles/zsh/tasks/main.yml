@@ -29,6 +29,11 @@
     src: .p10k.zsh
     dest: ~/.p10k.zsh
 
+- name: configure ~/.huskyrc
+  copy:
+    src: .huskyrc
+    dest: ~/.huskyrc
+
 # "username" variable is defined in "common" role
 - name: Set zsh as default shell
   user:
