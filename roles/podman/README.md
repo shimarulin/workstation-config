@@ -1,5 +1,4 @@
-Role Name
-=========
+# Role Name
 
 Ansible role for installing Podman, Skopeo and Buildah
 
@@ -7,9 +6,9 @@ Ansible role for installing Podman, Skopeo and Buildah
 - https://buildah.io/
 - https://github.com/containers/skopeo
 
-It also install `uidmap` for [user namespaces support in Podman](https://www.projectatomic.io/blog/2018/05/podman-userns/).
+It also install `uidmap` for
+[user namespaces support in Podman](https://www.projectatomic.io/blog/2018/05/podman-userns/).
 
-License
--------
+## License
 
 MIT

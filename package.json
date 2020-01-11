@@ -14,9 +14,10 @@
     "url": "https://github.com/shimarulin/workstation-config/issues"
   },
   "scripts": {
+    "format": "prettier --write \"{package.json,**/*.{yml,yaml,md}}\"",
+    "format:md": "prettier --write \"**/*.md\"",
     "format:pkg": "prettier --write package.json",
-    "format:yaml": "prettier --write \"**/*.{yml,yaml}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "format:yaml": "prettier --write \"**/*.{yml,yaml}\""
   },
   "devDependencies": {
     "husky": "^4.0.6",
@@ -31,7 +32,10 @@
   },
   "lint-staged": {
     "**/*.md": [
-      "prettier --parser markdown --prose-wrap always --write"
+      "prettier --write"
+    ],
+    "**/*.{yml,yaml}": [
+      "prettier --write"
     ],
     "**/package.json": [
       "prettier --write"

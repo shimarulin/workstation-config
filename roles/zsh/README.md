@@ -1,5 +1,4 @@
-ansible-role-zsh
-=========
+# ansible-role-zsh
 
 > Install and setup zsh with awesome plugins
 
@@ -12,7 +11,8 @@ ansible-role-zsh
 
 ## Plugin management
 
-- [Zplugin](https://github.com/zdharma/zplugin) - flexible Zsh plugin manager with clean fpath, reports, completion management, turbo mode, services
+- [Zplugin](https://github.com/zdharma/zplugin) - flexible Zsh plugin manager with clean fpath, reports, completion
+  management, turbo mode, services
 - [Crasis](https://github.com/zdharma/zplugin-crasis) - semigraphical .zshrc editor for Zplugin commands
 - [Zplugin Console](https://github.com/zplugin/zplugin-console) - A curses consolette for Zsh-Zplugin plugin manager
 
@@ -106,7 +106,7 @@ Plugins
 - [zsh-histdb](https://github.com/larkery/zsh-histdb)
 - [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - A fast reimplementation of Powerlevel9k ZSH theme
 
-Tools: 
+Tools:
 
 - https://github.com/junegunn/fzf
 
@@ -165,8 +165,9 @@ Command to print key codes: `showkey -a`. Some references:
 Plugins:
 
 - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-histdb](https://github.com/larkery/zsh-histdb), see also 
-  [Enables antigen usage #57](https://github.com/larkery/zsh-histdb/pull/57) and my own fork https://github.com/shimarulin/zsh-histdb
+- [zsh-histdb](https://github.com/larkery/zsh-histdb), see also
+  [Enables antigen usage #57](https://github.com/larkery/zsh-histdb/pull/57) and my own fork
+  https://github.com/shimarulin/zsh-histdb
 
 Articles:
 
@@ -174,11 +175,10 @@ Articles:
 
 ## Improved zsh command history and complete with fuzzy search by [fzf](https://github.com/junegunn/fzf)
 
-При вводе отображается подходящая команда через 
-[zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) из
-запроса к [zsh-histdb](https://github.com/larkery/zsh-histdb). Реверсивный поиск
-работает с [fzf](https://github.com/junegunn/fzf), который фильтрует подходящие 
-запросы, отсортированные по времени и месту из `zsh-histdb`.
+При вводе отображается подходящая команда через [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
+из запроса к [zsh-histdb](https://github.com/larkery/zsh-histdb). Реверсивный поиск работает с
+[fzf](https://github.com/junegunn/fzf), который фильтрует подходящие запросы, отсортированные по времени и месту из
+`zsh-histdb`.
 
 - https://github.com/larkery/zsh-histdb/issues/25
 - https://github.com/m42e/zsh-histdb-fzf
@@ -193,9 +193,10 @@ Articles:
 - ❯
 - ➜
 
---------------------------------------------------------------------------------
+---
 
-- 
+-
+
 - https://github.com/robbyrussell/oh-my-zsh
 
 More plugins and tools
@@ -209,36 +210,36 @@ see also some Ansible roles
 - https://github.com/gantsign/ansible-role-oh-my-zsh
 - https://github.com/fourforbusiness/ansible-role-oh-my-zsh
 
-Requirements
-------------
+## Requirements
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the
+role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
 
-Role Variables
---------------
+## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+A description of the settable variables for this role should go here, including any variables that are in
+defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables
+that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as
+well.
 
-Dependencies
-------------
+## Dependencies
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set
+for other roles, or variables that are used from other roles.
 
-Example Playbook
-----------------
+## Example Playbook
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
+Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
+users too:
 
     - hosts: servers
       roles:
          - { role: zsh, x: 42 }
 
-License
--------
+## License
 
 MIT
 
-Author Information
-------------------
+## Author Information
 
 An optional section for the role authors to include contact information, or a website (HTML is not allowed).
