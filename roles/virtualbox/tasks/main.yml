@@ -5,7 +5,7 @@
   debconf:
     name: virtualbox-ext-pack
     question: virtualbox-ext-pack/license
-    value: 'true'
+    value: "true"
     vtype: select
 
 - import_tasks: oracle.yml
@@ -25,7 +25,7 @@
   file:
     path: ~/.local/share/virtualbox-vms
     state: directory
-    mode: '0755'
+    mode: "0755"
   when: virtualbox_vms_stat_result.stat.exists == false
 
 - name: set virtualbox machine's folder

@@ -14,7 +14,8 @@
     "url": "https://github.com/shimarulin/workstation-config/issues"
   },
   "scripts": {
-    "format:pkg": "format-package --write",
+    "format:pkg": "prettier --write package.json",
+    "format:yaml": "prettier --write \"**/*.{yml,yaml}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {

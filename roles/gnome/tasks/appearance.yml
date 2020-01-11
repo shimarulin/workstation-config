@@ -33,7 +33,6 @@
   register: flatpak_theme_out
   changed_when: flatpak_theme_out.stderr == ''
 
-
 - name: configure themes
   dconf:
     key: "{{ item.key }}"

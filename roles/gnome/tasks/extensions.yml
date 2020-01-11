@@ -2,7 +2,7 @@
   file:
     path: "~/.local/share/gnome-shell/extensions"
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: install extensions from Git and enable extensions
   include_tasks: extensions_install.yml

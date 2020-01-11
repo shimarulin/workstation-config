@@ -12,7 +12,7 @@
     dest: /etc/fonts/conf.avail/50-noto-color-emoji.conf
     owner: root
     group: root
-    mode: '0644'
+    mode: "0644"
 
 - name: Create a symbolic link
   become: yes
@@ -27,7 +27,7 @@
   file:
     path: "~/.local/share/fonts"
     state: directory
-    mode: '0755'
+    mode: "0755"
 
 - name: install fonts from remote sources
   include_tasks: fonts_install.yml

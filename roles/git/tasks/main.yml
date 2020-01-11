@@ -11,6 +11,6 @@
     scope: global
     value: "{{ item.value }}"
   with_items:
-    - {name: "user.name",  value: "{{ git_user_name }}" }
-    - {name: "user.email", value: "{{ git_user_email }}" }
-    - {name: "ui.color",   value: "True" }
+    - { name: "user.name", value: "{{ git_user_name }}" }
+    - { name: "user.email", value: "{{ git_user_email }}" }
+    - { name: "ui.color", value: "True" }

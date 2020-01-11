@@ -24,4 +24,3 @@ gnome_extensions:
   - name: GPaste@gnome-shell-extensions.gnome.org
 
   - name: user-theme@gnome-shell-extensions.gcampax.github.com
-

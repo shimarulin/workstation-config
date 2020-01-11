@@ -9,7 +9,7 @@
 - name: add repository
   become: yes
   apt_repository:
-#    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ lsb_release.stdout }} stable"
+    #    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ lsb_release.stdout }} stable"
     repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable"
     filename: docker
     update_cache: yes

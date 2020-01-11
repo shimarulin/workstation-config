@@ -3,6 +3,5 @@
   apt:
     name: "{{ gnome_packages }}"
 
-
 - include_tasks: applications/gedit.yml
 - include_tasks: applications/nautilus.yml
