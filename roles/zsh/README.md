@@ -125,11 +125,14 @@ Zplugin/zsh resources:
 
 Zplugin examples:
 
+- https://github.com/black7375/BlaCk-Void-Zsh#2-install
 - http://zdharma.org/zplugin/wiki/Example-Minimal-Setup/
 - https://github.com/zdharma/zplugin-configs
 - https://github.com/black7375/BlaCk-Void-Zsh
 - https://github.com/denysdovhan/spaceship-prompt/issues/651
 - https://snippets.cacher.io/snippet/d8f057bd128fdaed11e6
+- https://gist.github.com/cristovao-trevisan/f41f648ff6c4241265d31511d8616be4
+- https://github.com/zdharma/zplugin/issues/45
 
 Common articles:
 
