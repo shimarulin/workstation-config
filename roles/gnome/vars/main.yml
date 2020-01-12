@@ -7,6 +7,7 @@ gnome_packages:
   - gnome-calculator
   - gnome-characters
   - gnome-logs
+  - baobab
 
 gnome_extensions:
   - name: sound-output-device-chooser@kgshank.net
