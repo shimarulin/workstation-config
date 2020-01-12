@@ -1,5 +1,14 @@
 ---
 # tasks file for zsh
+
+# https://github.com/dvorka/hstr/blob/master/INSTALLATION.md#ubuntu
+- name: add HSTR PPA
+  become: yes
+  apt_repository:
+    repo: ppa:ultradvorka/ppa
+    update_cache: yes
+    state: present
+
 - name: install dependencies
   become: yes
   apt:
