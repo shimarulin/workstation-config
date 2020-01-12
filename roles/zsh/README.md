@@ -82,6 +82,11 @@ zplugin light romkatv/powerlevel10k
 
 ## Syntax Highlighting
 
+## History search
+
+- https://github.com/psprint/zsh-navigation-tools
+- https://github.com/dvorka/hstr
+
 ## Extra features
 
 ### [Z](https://github.com/rupa/z)

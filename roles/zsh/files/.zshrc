@@ -46,40 +46,43 @@ local _OMZ_SOURCES=(
 zplugin ice from"gh" pick"/dev/null" nocompletions blockf lucid \
   multisrc"${_OMZ_SOURCES}" compile"(${(j.|.)_OMZ_SOURCES})"
 zplugin light robbyrussell/oh-my-zsh
-
-#zplugin ice from"gh" pick"/dev/null" nocompletions blockf lucid \
-#        multisrc"${_OMZ_SOURCES}" compile"(${(j.|.)_OMZ_SOURCES})" \
-#        atinit"_zpcompinit-custom; zpcdreplay" wait"1c"
-#zplugin light robbyrussell/oh-my-zsh
 ### End of Oh-My-Zsh chunk
 
-### zsh-histdb (https://github.com/larkery/zsh-histdb)
+
+########################################################################################################################
+### History auto suggestions with context
+### Based on the article https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/
+########################################################################################################################
+### load patched zsh-histdb
 zplugin light shimarulin/zsh-histdb
 
 # https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/
-show_local_history() {
-    limit="${1:-10}"
-    local query="
-        select history.start_time, commands.argv
-        from history left join commands on history.command_id = commands.rowid
-        left join places on history.place_id = places.rowid
-        where places.dir LIKE '$(sql_escape $PWD)%'
-        order by history.start_time desc
-        limit $limit
-    "
-    results=$(_histdb_query "$query")
-    echo "$results"
-}
-
-search_local_history() {
-    show_local_history 100 | grep "$1"
-}
+#show_local_history() {
+#    limit="${1:-10}"
+#    local query="
+#        select history.start_time, commands.argv
+#        from history left join commands on history.command_id = commands.rowid
+#        left join places on history.place_id = places.rowid
+#        where places.dir LIKE '$(sql_escape $PWD)%'
+#        order by history.start_time desc
+#        limit $limit
+#    "
+#    results=$(_histdb_query "$query")
+#    echo "$results"
+#}
+#
+#search_local_history() {
+#    show_local_history 100 | grep "$1"
+#}
 
 # https://github.com/larkery/zsh-histdb#reverse-isearch
-bindkey '^r' _histdb-isearch
+#bindkey '^r' _histdb-isearch
 ### End of zsh-histdb chunk
 
 ### zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)
+# https://github.com/larkery/zsh-histdb#integration-with-zsh-autosuggestions
+# Query to find the most frequently issued command issued exactly in this directory,
+# or if there are no matches it will find the most frequently issued command in any directory
 _zsh_autosuggest_strategy_histdb_top() {
   local query="select commands.argv from
     history left join commands on history.command_id = commands.rowid
@@ -94,7 +97,7 @@ _zsh_autosuggest_strategy_histdb_top() {
 # Query to pull in the most recent command if anything was found similar
 # in that directory. Otherwise pull in the most recent command used anywhere
 # Give back the command that was used most recently
-_zsh_autosuggest_strategy_histdb_top_fallback() {
+_zsh_autosuggest_strategy_histdb_top_most_recent() {
   local query="
   select commands.argv from
   history left join commands on history.command_id = commands.rowid
@@ -116,12 +119,13 @@ _zsh_autosuggest_strategy_histdb_top_fallback() {
   suggestion=$(_histdb_query "$query")
 }
 
-ZSH_AUTOSUGGEST_STRATEGY=histdb_top
-# ZSH_AUTOSUGGEST_STRATEGY=histdb_top_fallback
+#ZSH_AUTOSUGGEST_STRATEGY=histdb_top
+ZSH_AUTOSUGGEST_STRATEGY=histdb_top_most_recent
 
 zplugin ice wait atload"_zsh_autosuggest_start" lucid
 zplugin light zsh-users/zsh-autosuggestions
 ### End of zsh-autosuggestions chunk
+########################################################################################################################
 
 ### zsh-completions (https://github.com/zsh-users/zsh-completions)
 zplugin ice wait blockf atpull'zplugin creinstall -q .' lucid

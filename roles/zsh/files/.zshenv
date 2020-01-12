@@ -7,4 +7,4 @@ skip_global_compinit=1
 CRASIS_THEME="zdharma-256"
 
 ### https://github.com/zplugin/zplugin-console
-ZPVIEW_THEME="zdharma-256"
+ZPCONSOLE_THEME="zdharma-256"
