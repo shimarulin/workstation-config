@@ -2,6 +2,12 @@
 
 > Install and setup zsh with awesome plugins
 
+## Features
+
+- автодополнение - наиболее часто используемая команда в каталоге
+- стрелки вверх-вниз - команды из истории (возможно с нечетким фильтром fzf)
+- поиск по истории - fzf
+
 ## Fonts
 
 - [Powerline fonts](https://github.com/powerline/fonts)
@@ -84,8 +90,9 @@ zplugin light romkatv/powerlevel10k
 
 ## History search
 
+- https://github.com/junegunn/fzf
 - https://github.com/psprint/zsh-navigation-tools
-- https://github.com/dvorka/hstr
+- Проблемы с кириллицей https://github.com/dvorka/hstr
 
 ## Extra features
 
