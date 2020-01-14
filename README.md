@@ -36,12 +36,18 @@ Requirements:
 - Ansible
 - VirtualBox
 - Vagrant
+- Cookiecutter
 
-Also you should install `python-vagrant` package via pip:
+Addition requirements:
+
+- NodeJS
+- Yarn
+
+Also you should install `python-vagrant` and `cookiecutter` packages via pip:
 
 ```bash
 # Install packages
-pip3 install -U python-vagrant
+pip3 install -U python-vagrant cookiecutter
 ```
 
 and configure cookiecutter context with `setup` script in this repository root:
@@ -49,6 +55,13 @@ and configure cookiecutter context with `setup` script in this repository root:
 ```bash
 # Setup cookiecutter context
 ./setup --target cookiecutterrc
+```
+
+For enable Git Hook's to autoformatting files with [Prettier](https://prettier.io/) just install NodeJS packages with
+Yarn:
+
+```bash
+yarn
 ```
 
 ### Work with Ansible roles and variables
