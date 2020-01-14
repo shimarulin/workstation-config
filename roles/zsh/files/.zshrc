@@ -34,7 +34,7 @@ local _OMZ_SOURCES=(
   # Plugins
 #  plugins/autojump/autojump.plugin.zsh
 #  plugins/command-not-found/command-not-found.plugin.zsh
-#  plugins/fzf/fzf.plugin.zsh
+  plugins/fzf/fzf.plugin.zsh
 #  plugins/git/git.plugin.zsh
 #  plugins/gitfast/gitfast.plugin.zsh
 #  plugins/pip/pip.plugin.zsh
