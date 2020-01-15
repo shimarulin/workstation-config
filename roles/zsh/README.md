@@ -51,6 +51,13 @@ Command to print key codes: `showkey -a`. Some references:
 
 ### Common articles:
 
+- [How FZF and ripgrep improved my workflow](https://sidneyliebrand.io/blog/how-fzf-and-ripgrep-improved-my-workflow)
+- [ZSH FZF completion](https://doronbehar.com/articles/ZSH-FZF-completion/)
+- [Crazy Super Fast Fuzzy Search 🏎💨 - Ahmed Abdulrahman - Medium](https://medium.com/@_ahmed_ab/crazy-super-fast-fuzzy-search-9d44c29e14f)
+- [Get along with fzf for Terminal - DEV Community 👩‍💻👨‍💻](https://dev.to/kojikanao/get-along-with-terminal-3jd9)
+- [forgit: Interactive Git Commands With Previews Powered By fzf Fuzzy Finder - Linux Uprising Blog](https://www.linuxuprising.com/2019/11/forgit-interactive-git-commands-with.html)
+- [Why you should be using fzf, the command line fuzzy finder](https://www.freecodecamp.org/news/fzf-a-command-line-fuzzy-finder-missing-demo-a7de312403ff/)
+- [Better Vi Mode in Zshell - Stratus3D](http://stratus3d.com/blog/2017/10/26/better-vi-mode-in-zshell/)
 - [Zsh - ArchWiki](https://wiki.archlinux.org/index.php/Zsh)
 - [Переход с bash на zsh / Хабр](https://habr.com/ru/post/326580/)
 - [Не понимаю, и как я раньше жил без Zsh? \| Записки программиста](https://eax.me/zsh/)
@@ -124,9 +131,10 @@ Command to print key codes: `showkey -a`. Some references:
 
 ## Extra features
 
-### [Z](https://github.com/rupa/z)
-
-https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/
+- [Z](https://github.com/rupa/z)
+- https://github.com/ogham/exa
+- https://github.com/nvbn/thefuck
+- https://github.com/marzocchi/zsh-notify
 
 ### Symbols
 
