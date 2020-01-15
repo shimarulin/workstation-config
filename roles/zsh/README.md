@@ -24,7 +24,6 @@
 
 ### Todo features:
 
-- [ ] command_not_found_handler
 - [ ] Integrate Fuzzy history search with `fzf` to `zsh-histdb`
   - https://github.com/larkery/zsh-histdb/issues/25
   - https://github.com/m42e/zsh-histdb-fzf
