@@ -6,10 +6,13 @@
 .vagrant/
 
 # Log files (if you are creating logs in debug mode, uncomment this)
-# *.log
+*.log
 
 ### Vagrant Patch ###
 *.box
 
 ### User settings ###
 group_vars/all
+
+### NodeJS
+node_modules/

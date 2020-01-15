@@ -1,0 +1,13 @@
+- name: clone Gnome Shell extension repo - {{ item.name }}
+  git:
+    repo: "{{ item.repo }}"
+    depth: 1
+    dest: "/tmp/{{ item.name }}"
+  when: item.repo is defined
+
+- name: copy Gnome Shell extension source - {{ item.name }}
+  command: cp --recursive /tmp/{{ item.name }}{{ item.path }} $HOME/.local/share/gnome-shell/extensions/{{ item.name }}
+  when: item.repo is defined
+
+- name: enable Gnome Shell extension - {{ item.name }}
+  command: gnome-extensions enable {{ item.name }}

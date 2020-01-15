@@ -1,9 +1,7 @@
-ansible-role-ubuntu
-=========
+# ansible-role-ubuntu
 
 Ubuntu specific tasks
 
-License
--------
+## License
 
 MIT

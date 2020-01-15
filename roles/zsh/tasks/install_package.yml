@@ -1,0 +1,4 @@
+- name: install additional package "{{ item }}"
+  become: yes
+  apt:
+    deb: "{{ item }}"

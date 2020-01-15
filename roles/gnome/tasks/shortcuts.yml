@@ -4,7 +4,9 @@
     value: "{{ item.value }}"
   loop:
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings"
-      value: "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
+      value:
+        "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/name"
       value: "'Tilix Quake mode'"
     - key: "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/tilix-quake-mode/command"

@@ -13,6 +13,7 @@
     # Environment
     - python3
     - java
+    - yarn
 
     # Shell
     - zsh
@@ -39,3 +40,6 @@
     # Additional tools
     - multibootusb
     - sparkleshare
+
+    # Messaging
+    - skype

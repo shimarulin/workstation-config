@@ -1,4 +1,9 @@
-- name: Enable extensions
-  dconf:
-    key: "/org/gnome/shell/enabled-extensions"
-    value: "['GPaste@gnome-shell-extensions.gnome.org', 'user-theme@gnome-shell-extensions.gcampax.github.com']"
+- name: create Gnome Shell extension directory if it does not exist
+  file:
+    path: "~/.local/share/gnome-shell/extensions"
+    state: directory
+    mode: "0755"
+
+- name: install extensions from Git and enable extensions
+  include_tasks: extensions_install.yml
+  loop: "{{ gnome_extensions }}"

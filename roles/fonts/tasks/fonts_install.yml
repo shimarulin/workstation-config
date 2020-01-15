@@ -1,0 +1,40 @@
+- name: check the {{ item.name }} font already installed
+  stat:
+    path: $HOME/.local/share/fonts/{{ item.name }}
+  register: current_font_stat_result
+
+### Load ZIP-packed font
+- name: create directoriy for unarchive {{ item.name }} font
+  file:
+    path: "/tmp/{{ item.name }}"
+    state: directory
+    mode: "0755"
+  when: current_font_stat_result.stat.exists == false and item.url is defined
+
+- name: download and unarchive {{ item.name }} font
+  unarchive:
+    src: "{{ item.url }}"
+    dest: "/tmp/{{ item.name }}"
+    remote_src: yes
+  when: current_font_stat_result.stat.exists == false and item.url is defined
+
+- name: copy {{ item.name }} font files
+  command: cp --recursive /tmp/{{ item.name }}{{ item.path }} $HOME/.local/share/fonts/{{ item.name }}
+  when: current_font_stat_result.stat.exists == false and item.url is defined
+
+### Load font files directly
+- name: create a directory for the {{ item.name }} font
+  file:
+    path: "$HOME/.local/share/fonts/{{ item.name }}"
+    state: directory
+    mode: "0755"
+  when: current_font_stat_result.stat.exists == false and item.urls is defined
+
+- name: load extra fonts directly
+  get_url:
+    url: "{{ font_url }}"
+    dest: "$HOME/.local/share/fonts/{{ item.name }}/"
+  loop: "{{ item.urls }}"
+  loop_control:
+    loop_var: font_url
+  when: current_font_stat_result.stat.exists == false and item.urls is defined

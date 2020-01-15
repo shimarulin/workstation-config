@@ -3,4 +3,5 @@
 zsh_packages:
   - zsh
   - sqlite3
-  - fzf
+#  - fzf
+#  - ripgrep

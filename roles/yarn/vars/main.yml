@@ -1,0 +1,4 @@
+---
+# vars file for yarn
+yarn_packages:
+  - yarn

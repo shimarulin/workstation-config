@@ -13,7 +13,7 @@
       value: 2
     # Boolean
     - key: "/org/gnome/meld/insert-spaces-instead-of-tabs"
-      value: 'true'
+      value: "true"
     # String
     - key: "/org/gnome/meld/style-scheme"
       value: "'solarized-light'"

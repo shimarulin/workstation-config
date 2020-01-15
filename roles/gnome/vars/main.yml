@@ -7,3 +7,21 @@ gnome_packages:
   - gnome-calculator
   - gnome-characters
   - gnome-logs
+  - baobab
+
+gnome_extensions:
+  - name: sound-output-device-chooser@kgshank.net
+    repo: https://github.com/kgshank/gse-sound-output-device-chooser.git
+    path: "/sound-output-device-chooser@kgshank.net"
+
+  - name: mprisindicatorbutton@JasonLG1979.github.io
+    repo: https://github.com/JasonLG1979/gnome-shell-extension-mpris-indicator-button.git
+    path: "/mprisindicatorbutton@JasonLG1979.github.io"
+
+  - name: unlockDialogBackground@sun.wxg@gmail.com
+    repo: https://github.com/sunwxg/gnome-shell-extension-unlockDialogBackground.git
+    path: "/unlockDialogBackground@sun.wxg@gmail.com"
+
+  - name: GPaste@gnome-shell-extensions.gnome.org
+
+  - name: user-theme@gnome-shell-extensions.gcampax.github.com

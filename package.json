@@ -1,0 +1,44 @@
+{
+  "name": "workstation-config",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Ansible config for my own workstation",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shimarulin/workstation-config.git"
+  },
+  "author": "Vyacheslav Shimarulin <shimarulin@gmail.com>",
+  "homepage": "https://github.com/shimarulin/workstation-config#readme",
+  "bugs": {
+    "url": "https://github.com/shimarulin/workstation-config/issues"
+  },
+  "scripts": {
+    "format": "prettier --write \"{package.json,**/*.{yml,yaml,md}}\"",
+    "format:md": "prettier --write \"**/*.md\"",
+    "format:pkg": "prettier --write package.json",
+    "format:yaml": "prettier --write \"**/*.{yml,yaml}\""
+  },
+  "devDependencies": {
+    "husky": "^4.0.6",
+    "lint-staged": "^10.0.0-beta.15",
+    "prettier": "^1.19.1",
+    "prettier-plugin-package": "^0.3.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.md": [
+      "prettier --write"
+    ],
+    "**/*.{yml,yaml}": [
+      "prettier --write"
+    ],
+    "**/package.json": [
+      "prettier --write"
+    ]
+  }
+}

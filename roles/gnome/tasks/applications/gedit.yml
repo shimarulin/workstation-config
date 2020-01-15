@@ -11,4 +11,4 @@
   copy:
     src: gedit/org.gnome.gedit.desktop
     dest: ~/.local/share/applications/org.gnome.gedit.desktop
-    mode: '0755'
+    mode: "0755"

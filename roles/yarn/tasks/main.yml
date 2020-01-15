@@ -1,0 +1,22 @@
+---
+# tasks file for yarn
+- name: add GPG key
+  become: yes
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+    state: present
+
+- name: add repository
+  become: yes
+  apt_repository:
+    repo: deb https://dl.yarnpkg.com/debian/ stable main
+    filename: yarn
+    update_cache: yes
+    state: present
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: yarn
+    install_recommends: no
+    state: present

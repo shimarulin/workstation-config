@@ -1,0 +1,21 @@
+---
+# tasks file for skype
+- name: add GPG key
+  become: yes
+  apt_key:
+    url: https://repo.skype.com/data/SKYPE-GPG-KEY
+    state: present
+
+- name: add repository
+  become: yes
+  apt_repository:
+    repo: deb [arch=amd64] https://repo.skype.com/deb stable main
+    filename: skype-stable
+    update_cache: yes
+    state: present
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ skype_packages }}"
+    # state: present # by default

@@ -1,0 +1,4 @@
+---
+# vars file for skype
+skype_packages:
+  - skypeforlinux

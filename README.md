@@ -36,12 +36,18 @@ Requirements:
 - Ansible
 - VirtualBox
 - Vagrant
+- Cookiecutter
 
-Also you should install `python-vagrant` package via pip:
+Addition requirements:
+
+- NodeJS
+- Yarn
+
+Also you should install `python-vagrant` and `cookiecutter` packages via pip:
 
 ```bash
 # Install packages
-pip3 install -U python-vagrant
+pip3 install -U python-vagrant cookiecutter
 ```
 
 and configure cookiecutter context with `setup` script in this repository root:
@@ -49,6 +55,13 @@ and configure cookiecutter context with `setup` script in this repository root:
 ```bash
 # Setup cookiecutter context
 ./setup --target cookiecutterrc
+```
+
+For enable Git Hook's to autoformatting files with [Prettier](https://prettier.io/) just install NodeJS packages with
+Yarn:
+
+```bash
+yarn
 ```
 
 ### Work with Ansible roles and variables
@@ -60,8 +73,8 @@ You can configure your variables with `setup` script:
 ./setup --target vars
 ```
 
-If you add variables manually, don't forget to change variables template in `templates/vars`. 
-It will used for setup variables before run playbook for setup target environment.
+If you add variables manually, don't forget to change variables template in `templates/vars`. It will used for setup
+variables before run playbook for setup target environment.
 
 For create new role from template you can run `setup` with `--target role` or without args
 
@@ -74,10 +87,9 @@ For create new role from template you can run `setup` with `--target role` or wi
 
 ### Create Vagrant box for test role from existing virtual machine
 
-Create new virtual machine and install target distributive. 
-In according to Vagrant conventions, create user `vagrant` with password `vagrant`. 
-This password don't need to run playbook and you can choice other if you need.
-After this it need setup to use as Vagrant box. 
+Create new virtual machine and install target distributive. In according to Vagrant conventions, create user `vagrant`
+with password `vagrant`. This password don't need to run playbook and you can choice other if you need. After this it
+need setup to use as Vagrant box.
 
 Install SSH server:
 
@@ -85,7 +97,7 @@ Install SSH server:
 sudo apt install openssh-server
 ```
 
-Add unsafe public key:  
+Add unsafe public key:
 
 ```bash
 mkdir -pm 700 /home/vagrant/.ssh
@@ -93,8 +105,8 @@ wget --no-check-certificate 'https://raw.github.com/mitchellh/vagrant/master/key
 chmod 0600 /home/vagrant/.ssh/authorized_keys
 ```
 
-And add to end of file `/etc/sudoers` using the command `sudo visudo` these strings
-to connect to virtual machine via ssh without password:
+And add to end of file `/etc/sudoers` using the command `sudo visudo` these strings to connect to virtual machine via
+ssh without password:
 
 ```
 # Vagrant required
@@ -105,7 +117,7 @@ To make you own box you should run command
 
 ```bash
 vagrant package --base ubuntu-19.10-desktop --output ubuntu-19.10-desktop.box
-``` 
+```
 
 After this you can add you box:
 
@@ -125,4 +137,3 @@ vagrant halt
 # Reset and restart VM
 vagrant destroy && vagrant up
 ```
-
