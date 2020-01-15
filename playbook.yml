@@ -21,7 +21,6 @@
     # System settings and tools
     - ubuntu
     - tilix
-    - meld
     - gpaste
     - ulauncher
     - gnome
@@ -43,3 +42,7 @@
 
     # Messaging
     - skype
+
+    # Development tools
+    - vscode
+    - meld

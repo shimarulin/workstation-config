@@ -1,0 +1,4 @@
+---
+# vars file for vscode
+vscode_packages:
+  - code
