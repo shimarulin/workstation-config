@@ -1,0 +1,21 @@
+---
+# tasks file for typora
+- name: add GPG key
+  become: yes
+  apt_key:
+    url: https://typora.io/linux/public-key.asc
+    state: present
+
+- name: add repository
+  become: yes
+  apt_repository:
+    repo: "deb https://typora.io/linux ./"
+    filename: typora
+    update_cache: yes
+    state: present
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ typora_packages }}"
+    # state: present # by default

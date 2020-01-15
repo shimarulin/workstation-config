@@ -1,0 +1,4 @@
+---
+# vars file for typora
+typora_packages:
+  - typora

@@ -46,3 +46,6 @@
     # Development tools
     - vscode
     - meld
+
+    # Editors
+    - typora
