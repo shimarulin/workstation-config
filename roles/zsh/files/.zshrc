@@ -75,8 +75,6 @@ zplugin light shimarulin/zsh-histdb
 #    show_local_history 100 | grep "$1"
 #}
 
-# https://github.com/larkery/zsh-histdb#reverse-isearch
-#bindkey '^r' _histdb-isearch
 ### End of zsh-histdb chunk
 
 ### zsh-autosuggestions (https://github.com/zsh-users/zsh-autosuggestions)

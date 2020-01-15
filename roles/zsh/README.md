@@ -4,149 +4,53 @@
 
 ## Features
 
-- автодополнение - наиболее часто используемая команда в каталоге
-- стрелки вверх-вниз - команды из истории (возможно с нечетким фильтром fzf)
-- поиск по истории - fzf
+- Plugins management with [Zplugin](https://github.com/zdharma/zplugin) - flexible Zsh plugin manager with clean fpath,
+  reports, completion management, turbo mode, services. Extra tools:
+  - [Crasis](https://github.com/zdharma/zplugin-crasis) - semigraphical .zshrc editor for Zplugin commands
+  - [Zplugin Console](https://github.com/zplugin/zplugin-console) - A curses consolette for Zsh-Zplugin plugin manager
+- [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh) support;
+- Syntax Highlighting with [fast-syntax-highlighting](https://github.com/zdharma/fast-syntax-highlighting) plugin;
+- Autosuggestion for the most recent command in this directory. Used
+  [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions) and my own fork of
+  [zsh-histdb](https://github.com/larkery/zsh-histdb) (https://github.com/shimarulin/zsh-histdb) based on pull request
+  [Enables antigen usage #57](https://github.com/larkery/zsh-histdb/pull/57) under cower. More info in
+  https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/ and
+  https://github.com/larkery/zsh-histdb#integration-with-zsh-autosuggestions;
+- Fuzzy history search with [fzf](https://github.com/junegunn/fzf). Currently, it replaced the
+  [zsh-navigation-tools](https://github.com/psprint/zsh-navigation-tools) and
+  [zsh-history-substring-search](https://github.com/zsh-users/zsh-history-substring-search);
+- Fast and clear, but informative prompt with [Powerlevel10k](https://github.com/romkatv/powerlevel10k). See
+  [Prompt](#prompt) section for more info about some alternatives.
+
+### Todo features:
+
+- [ ] command_not_found_handler
+- [ ] Integrate Fuzzy history search with `fzf` to `zsh-histdb`
+  - https://github.com/larkery/zsh-histdb/issues/25
+  - https://github.com/m42e/zsh-histdb-fzf
+
+## Key bindings
+
+- <kbd>Ctrl</kbd> + <kbd>R</kbd> - fuzzy history search
+- <kbd>Ctrl</kbd> + <kbd>T</kbd> - select files and directories onto the command-line
+
+### Additional key bindings info
+
+Command to print key codes: `showkey -a`. Some references:
+
+- https://jdhao.github.io/2019/06/13/zsh_bind_keys/
+- https://wiki.archlinux.org/index.php/Zsh#Key_bindings
+- https://www.zsh.org/mla/users/2014/msg00266.html
 
 ## Fonts
 
 - [Powerline fonts](https://github.com/powerline/fonts)
 - [Nerd Fonts](https://www.nerdfonts.com/)
-
 - Powerlevel10k - Recommended: Meslo Nerd Font patched for Powerlevel10k
 
-## Plugin management
+## See also
 
-- [Zplugin](https://github.com/zdharma/zplugin) - flexible Zsh plugin manager with clean fpath, reports, completion
-  management, turbo mode, services
-- [Crasis](https://github.com/zdharma/zplugin-crasis) - semigraphical .zshrc editor for Zplugin commands
-- [Zplugin Console](https://github.com/zplugin/zplugin-console) - A curses consolette for Zsh-Zplugin plugin manager
-
-## Prompt
-
-- [Powerlevel10k](https://github.com/romkatv/powerlevel10k)
-- [Spaceship](https://github.com/denysdovhan/spaceship-prompt)
-- [Pure](https://github.com/sindresorhus/pure)
-- [Lambda (Mod) ZSH Theme](https://github.com/halfo/lambda-mod-zsh-theme)
-- [geometry](https://github.com/geometry-zsh/geometry)
-- [Bullet Train](https://github.com/caiogondim/bullet-train.zsh)
-- [typewritten](https://github.com/reobin/typewritten)
-- https://github.com/tylerreckart/hyperzsh
-- https://github.com/zthxxx/jovial
-- https://github.com/agnoster/agnoster-zsh-theme
-
-```bash
-########################################################################################################################
-### Load Prompt (Theme) [geometry](https://github.com/geometry-zsh/geometry)
-########################################################################################################################
-GEOMETRY_PROMPT=(geometry_echo geometry_status geometry_path)
-GEOMETRY_PROMPT+=(geometry_newline)
-
-zplugin ice atload'!geometry::prompt' lucid nocd
-zplugin load geometry-zsh/geometry
-########################################################################################################################
-```
-
-```bash
-########################################################################################################################
-### Load Prompt (Theme)
-########################################################################################################################
-
-DEFAULT_PROMPT="powerlevel10k"
-
-# Load when DEFAULT_PROMPT == lambda-mod
-zplugin ice load'![[ $DEFAULT_PROMPT = "lambda-mod" ]]' unload'![[ $DEFAULT_PROMPT != "lambda-mod" ]]' lucid
-zplugin load halfo/lambda-mod-zsh-theme
-
-# Load when $DEFAULT_PROMPT == pure
-zplugin ice load'![[ $DEFAULT_PROMPT = "pure" ]]' unload'![[ $DEFAULT_PROMPT != "pure" ]]' \
-    pick"/dev/null" multisrc"{async,pure}.zsh" \
-    atload'!prompt_pure_precmd' lucid nocd
-zplugin load sindresorhus/pure
-
-# Load when $DEFAULT_PROMPT == geometry
-zplugin ice load'![[ $DEFAULT_PROMPT = "geometry" ]]' unload'![[ $DEFAULT_PROMPT != "geometry" ]]' \
-          atload'!geometry::prompt' lucid nocd
-zplugin load geometry-zsh/geometry
-
-## Load when DEFAULT_PROMPT == typewritten
-#zplugin ice load'![[ $DEFAULT_PROMPT = "typewritten" ]]' unload'![[ $DEFAULT_PROMPT != "typewritten" ]]' lucid
-#zplugin ice lucid
-#zplugin light reobin/typewritten
-
-# Load when DEFAULT_PROMPT == spaceship
-zplugin ice load'![[ $DEFAULT_PROMPT = "spaceship" ]]' unload'![[ $DEFAULT_PROMPT != "spaceship" ]]' lucid
-zplugin light denysdovhan/spaceship-prompt
-
-# Load when DEFAULT_PROMPT == powerlevel10k
-zplugin ice load'![[ $DEFAULT_PROMPT = "powerlevel10k" ]]' unload'![[ $DEFAULT_PROMPT != "powerlevel10k" ]]' lucid
-zplugin light romkatv/powerlevel10k
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh && $DEFAULT_PROMPT == 'powerlevel10k' ]] || source ~/.p10k.zsh
-
-```
-
-## Syntax Highlighting
-
-## History search
-
-- https://github.com/junegunn/fzf
-- https://github.com/psprint/zsh-navigation-tools
-- Проблемы с кириллицей https://github.com/dvorka/hstr
-
-## Extra features
-
-### [Z](https://github.com/rupa/z)
-
-https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/
-
----
-
-Todo:
-
-- [ ] command_not_found_handler
-- [ ] https://github.com/dracula/gnome-terminal
-
-Awesome lists:
-
-- https://github.com/unixorn/awesome-zsh-plugins
-- https://terminalsare.sexy/#zsh
-
-Plugins
-
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-histdb](https://github.com/larkery/zsh-histdb)
-- [Powerlevel10k](https://github.com/romkatv/powerlevel10k) - A fast reimplementation of Powerlevel9k ZSH theme
-
-Tools:
-
-- https://github.com/junegunn/fzf
-
-Additions:
-
-- [Oh My Zsh](https://github.com/robbyrussell/oh-my-zsh)
-
-Zplugin/zsh resources:
-
-- https://www.reddit.com/r/zplugin/
-- https://www.reddit.com/r/zsh/comments/dk53ow/new_powerlevel10k_feature_instant_prompt/
-- https://www.reddit.com/r/zsh/
-- http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html
-- https://www.reddit.com/r/zsh/comments/ak0vgi/a_comparison_of_all_the_zsh_plugin_mangers_i_used/
-- https://www.reddit.com/r/zsh/comments/9760xt/solving_some_performance_issues_shown_with_zprof/
-
-Zplugin examples:
-
-- https://github.com/black7375/BlaCk-Void-Zsh#2-install
-- http://zdharma.org/zplugin/wiki/Example-Minimal-Setup/
-- https://github.com/zdharma/zplugin-configs
-- https://github.com/black7375/BlaCk-Void-Zsh
-- https://github.com/denysdovhan/spaceship-prompt/issues/651
-- https://snippets.cacher.io/snippet/d8f057bd128fdaed11e6
-- https://gist.github.com/cristovao-trevisan/f41f648ff6c4241265d31511d8616be4
-- https://github.com/zdharma/zplugin/issues/45
-
-Common articles:
+### Common articles:
 
 - [Zsh - ArchWiki](https://wiki.archlinux.org/index.php/Zsh)
 - [Переход с bash на zsh / Хабр](https://habr.com/ru/post/326580/)
@@ -164,89 +68,71 @@ Common articles:
 - [5 tips to improve productivity with zsh \| Opensource.com](https://opensource.com/article/18/9/tips-productivity-zsh)
 - [Awesome Terminal upgrades - Part Three: Manage ZSH plugins using Zplugin - DEV Community 👩‍💻👨‍💻](https://dev.to/misterf/awesome-terminal-upgrades-part-three-manage-zsh-plugins-using-zplugin-1fba)
 
-## Key binding
+### More plugins and tools
 
-Command to print key codes: `showkey -a`. Some references:
+- https://github.com/unixorn/awesome-zsh-plugins
+- https://terminalsare.sexy/#zsh
+- https://github.com/alebcay/awesome-shell
 
-- https://jdhao.github.io/2019/06/13/zsh_bind_keys/
-- https://wiki.archlinux.org/index.php/Zsh#Key_bindings
-- https://www.zsh.org/mla/users/2014/msg00266.html
+### Zplugin/zsh resources:
 
-## Improved zsh command history and complete
+- https://www.reddit.com/r/zplugin/
+- https://www.reddit.com/r/zsh/comments/dk53ow/new_powerlevel10k_feature_instant_prompt/
+- https://www.reddit.com/r/zsh/
+- http://zdharma.org/Zsh-100-Commits-Club/Zsh-Plugin-Standard.html
+- https://www.reddit.com/r/zsh/comments/ak0vgi/a_comparison_of_all_the_zsh_plugin_mangers_i_used/
+- https://www.reddit.com/r/zsh/comments/9760xt/solving_some_performance_issues_shown_with_zprof/
 
-Plugins:
+### Zplugin examples:
 
-- [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-- [zsh-histdb](https://github.com/larkery/zsh-histdb), see also
-  [Enables antigen usage #57](https://github.com/larkery/zsh-histdb/pull/57) and my own fork
-  https://github.com/shimarulin/zsh-histdb
-
-Articles:
-
-- https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/
-
-## Improved zsh command history and complete with fuzzy search by [fzf](https://github.com/junegunn/fzf)
-
-При вводе отображается подходящая команда через [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)
-из запроса к [zsh-histdb](https://github.com/larkery/zsh-histdb). Реверсивный поиск работает с
-[fzf](https://github.com/junegunn/fzf), который фильтрует подходящие запросы, отсортированные по времени и месту из
-`zsh-histdb`.
-
-- https://github.com/larkery/zsh-histdb/issues/25
-- https://github.com/m42e/zsh-histdb-fzf
+- https://github.com/black7375/BlaCk-Void-Zsh#2-install
+- http://zdharma.org/zplugin/wiki/Example-Minimal-Setup/
+- https://github.com/zdharma/zplugin-configs
+- https://github.com/black7375/BlaCk-Void-Zsh
+- https://github.com/denysdovhan/spaceship-prompt/issues/651
+- https://snippets.cacher.io/snippet/d8f057bd128fdaed11e6
+- https://gist.github.com/cristovao-trevisan/f41f648ff6c4241265d31511d8616be4
+- https://github.com/zdharma/zplugin/issues/45
 
 ## Theming
 
-- https://github.com/romkatv/powerlevel10k/
-- https://gist.github.com/romkatv
+### Prompt
 
-### Symbols
+- [Powerlevel10k](https://github.com/romkatv/powerlevel10k). Some examples available on https://gist.github.com/romkatv
+- [geometry](https://github.com/geometry-zsh/geometry)
+- [Spaceship](https://github.com/denysdovhan/spaceship-prompt)
+- [Pure](https://github.com/sindresorhus/pure)
+- [typewritten](https://github.com/reobin/typewritten)
+- [Lambda (Mod) ZSH Theme](https://github.com/halfo/lambda-mod-zsh-theme)
+- [Bullet Train](https://github.com/caiogondim/bullet-train.zsh)
+- [hyperzsh](https://github.com/tylerreckart/hyperzsh)
+- [jovial](https://github.com/zthxxx/jovial)
+- [agnoster](https://github.com/agnoster/agnoster-zsh-theme)
 
-- ❯
-- ➜
+### Terminal
 
----
+#### Gnome Terminal
 
--
+- https://github.com/dracula/gnome-terminal
 
-- https://github.com/robbyrussell/oh-my-zsh
-
-More plugins and tools
-
-- https://github.com/unixorn/awesome-zsh-plugins
-- https://github.com/alebcay/awesome-shell
-
-see also some Ansible roles
+### Some Ansible roles
 
 - https://github.com/viasite-ansible/ansible-role-zsh
 - https://github.com/gantsign/ansible-role-oh-my-zsh
 - https://github.com/fourforbusiness/ansible-role-oh-my-zsh
 
-## Requirements
+---
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the
-role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+## Extra features
 
-## Role Variables
+### [Z](https://github.com/rupa/z)
 
-A description of the settable variables for this role should go here, including any variables that are in
-defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables
-that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as
-well.
+https://www.smashingmagazine.com/2015/07/become-command-line-power-user-oh-my-zsh-z/
 
-## Dependencies
+### Symbols
 
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set
-for other roles, or variables that are used from other roles.
-
-## Example Playbook
-
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for
-users too:
-
-    - hosts: servers
-      roles:
-         - { role: zsh, x: 42 }
+- ❯
+- ➜
 
 ## License
 
