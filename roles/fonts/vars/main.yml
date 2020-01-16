@@ -7,7 +7,7 @@ fonts_packages:
   # Color emoji
   - fonts-noto-color-emoji
   # A monochrome emoji for JetBrains IDE's
-  - fonts-symbola
+  #  - fonts-symbola
   # Pre-patched and adjusted fonts for usage with the Powerline statusline plugin
   - fonts-powerline
 
