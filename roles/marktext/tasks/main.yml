@@ -1,0 +1,7 @@
+---
+# tasks file for marktext
+- name: Install the marktext package from flathub
+  become: yes
+  flatpak:
+    name: com.github.marktext.marktext
+    state: present
