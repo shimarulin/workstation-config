@@ -46,6 +46,7 @@
     # Development tools
     - vscode
     - meld
+    - insomnia
 
     # Editors
     - typora

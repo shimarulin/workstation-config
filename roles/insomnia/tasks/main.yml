@@ -1,0 +1,21 @@
+---
+# tasks file for insomnia
+- name: add GPG key
+  become: yes
+  apt_key:
+    url: https://insomnia.rest/keys/debian-public.key.asc
+    state: present
+
+- name: add repository
+  become: yes
+  apt_repository:
+    repo: "deb https://dl.bintray.com/getinsomnia/Insomnia /"
+    filename: insomnia
+    update_cache: yes
+    state: present
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ insomnia_packages }}"
+    # state: present # by default
