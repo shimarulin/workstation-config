@@ -8,6 +8,7 @@ gnome_packages:
   - gnome-characters
   - gnome-logs
   - baobab
+  - gnome-shell-pomodoro
 
 gnome_extensions:
   - name: sound-output-device-chooser@kgshank.net
