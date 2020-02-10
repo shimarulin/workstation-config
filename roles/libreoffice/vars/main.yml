@@ -1,0 +1,16 @@
+---
+# vars file for libreoffice
+libreoffice_packages:
+  - libreoffice-writer
+  - libreoffice-calc
+  #  - hyphen-ru
+  #  - mythes-ru
+  #  - libreoffice-voikko
+  - libreoffice-gnome
+  - libreoffice-gtk3
+  - libreoffice-java-common
+  - libreoffice-l10n-ru
+  - libreoffice-help-ru
+  - libreoffice-style-breeze
+  - libreoffice-style-papirus
+  - libreoffice-style-sifr

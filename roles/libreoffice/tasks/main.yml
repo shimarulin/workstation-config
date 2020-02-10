@@ -1,0 +1,7 @@
+---
+# tasks file for libreoffice
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ libreoffice_packages }}"
+    # state: present # by default
