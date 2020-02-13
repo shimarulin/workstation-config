@@ -1,0 +1,4 @@
+---
+# vars file for media
+media_packages:
+  - ffmpeg

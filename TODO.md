@@ -1,7 +1,4 @@
-- [ ] install oh-my-zsh
-- [ ] install NodeJS via NVM
 - [ ] install Podman
 - [ ] setup Gnome
 - [ ] setup Gedit
 - [ ] setup Nautilus
-- [ ] install SparkleShare

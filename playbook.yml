@@ -9,6 +9,7 @@
     - git
     - flatpak
     - fonts
+    - media
 
     # Environment
     - python3
@@ -54,3 +55,6 @@
 
     # Office
     - libreoffice
+
+    # Media tools
+    - obs-studio

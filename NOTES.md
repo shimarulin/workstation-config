@@ -1,3 +1,7 @@
+## Additional software
+
+- https://www.reaper.fm/download.php#linux_download
+
 ## Modules
 
 ### dconf

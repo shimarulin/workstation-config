@@ -1,0 +1,4 @@
+---
+# vars file for obs-studio
+obs_studio_packages:
+  - obs-studio

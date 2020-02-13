@@ -1,0 +1,14 @@
+---
+# tasks file for obs-studio
+- name: add repository
+  become: yes
+  apt_repository:
+    repo: ppa:obsproject/obs-studio
+    update_cache: yes
+    state: present
+
+- name: install dependencies
+  become: yes
+  apt:
+    name: "{{ obs_studio_packages }}"
+    # state: present # by default
