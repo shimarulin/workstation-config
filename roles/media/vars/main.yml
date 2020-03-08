@@ -2,3 +2,7 @@
 # vars file for media
 media_packages:
   - ffmpeg
+  - libavcodec-extra
+  - gstreamer1.0-libav
+  - gstreamer1.0-plugins-ugly
+  - gstreamer1.0-vaapi
