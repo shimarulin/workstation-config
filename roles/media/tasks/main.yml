@@ -5,3 +5,9 @@
   apt:
     name: "{{ media_packages }}"
     # state: present # by default
+
+- name: Install the Celluloid player from flathub
+  become: yes
+  flatpak:
+    name: io.github.celluloid_player.Celluloid
+    state: present
