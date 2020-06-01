@@ -1,3 +1,4 @@
+### Arc Theme repository is outdated
 - name: add Arc Theme repository
   become: yes
   apt_repository:
