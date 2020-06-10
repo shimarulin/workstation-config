@@ -137,3 +137,11 @@ vagrant halt
 # Reset and restart VM
 vagrant destroy && vagrant up
 ```
+
+### Delete default VM and box
+
+In project root:
+
+```bash
+vagrant destroy
+```
