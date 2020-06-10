@@ -14,7 +14,7 @@ Vagrant.configure("2") do |config|
   # boxes at https://vagrantcloud.com/search.
   #config.vm.box = "chenhan/ubuntu-desktop-19.10"
   #config.vm.box_version = "20190916"
-  config.vm.box = "shimarulin/ubuntu-19.10-desktop"
+  config.vm.box = "shimarulin/ubuntu-20.04-desktop"
   config.vm.box_version = "0"
 
   # Disable automatic box update checking. If you disable this, then
