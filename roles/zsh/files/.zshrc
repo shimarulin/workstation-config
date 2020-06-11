@@ -1,18 +1,33 @@
-### Added by Zplugin's installer
-source "$HOME/.zplugin/bin/zplugin.zsh"
-autoload -Uz _zplugin
-(( ${+_comps} )) && _comps[zplugin]=_zplugin
-### End of Zplugin installer's chunk
+### Added by Zinit's installer
+if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
+    print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
+    command git clone https://github.com/zdharma/zinit "$HOME/.zinit/bin" && \
+        print -P "%F{33}▓▒░ %F{34}Installation successful.%f%b" || \
+        print -P "%F{160}▓▒░ The clone has failed.%f%b"
+fi
+
+source "$HOME/.zinit/bin/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zinit-zsh/z-a-as-monitor \
+    zinit-zsh/z-a-patch-dl \
+    zinit-zsh/z-a-bin-gem-node
+
+### End of Zinit's installer chunk
 
 ### zplugin-crasis (https://github.com/zdharma/zplugin-crasis)
-zplugin light zdharma/zui
-zplugin light zdharma/zplugin-crasis
+zinit light zdharma/zui
+zinit light zdharma/zinit-crasis
 ### End of zplugin-crasis chunk
 
-### zplugin-console (https://github.com/zplugin/zplugin-console)
-zplugin ice wait lucid
-zplugin load zplugin/zplugin-console
-### End of zplugin-console chunk
+### zinit-console (https://github.com/zinit-zsh/zinit-console)
+zinit wait lucid for zinit-zsh/zinit-console
+### End of zinit-console chunk
 
 ### Oh-My-Zsh
 local _OMZ_SOURCES=(
@@ -43,9 +58,9 @@ local _OMZ_SOURCES=(
 #  plugins/urltools/urltools.plugin.zsh
 )
 
-zplugin ice from"gh" pick"/dev/null" nocompletions blockf lucid \
+zinit ice from"gh" pick"/dev/null" nocompletions blockf lucid \
   multisrc"${_OMZ_SOURCES}" compile"(${(j.|.)_OMZ_SOURCES})"
-zplugin light robbyrussell/oh-my-zsh
+zinit light robbyrussell/oh-my-zsh
 ### End of Oh-My-Zsh chunk
 
 
@@ -54,7 +69,7 @@ zplugin light robbyrussell/oh-my-zsh
 ### Based on the article https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/
 ########################################################################################################################
 ### load patched zsh-histdb
-zplugin light shimarulin/zsh-histdb
+zinit light shimarulin/zsh-histdb
 
 # https://www.dev-diaries.com/blog/terminal-history-auto-suggestions-as-you-type/
 #show_local_history() {
@@ -120,23 +135,23 @@ _zsh_autosuggest_strategy_histdb_top_most_recent() {
 #ZSH_AUTOSUGGEST_STRATEGY=histdb_top
 ZSH_AUTOSUGGEST_STRATEGY=histdb_top_most_recent
 
-zplugin ice wait atload"_zsh_autosuggest_start" lucid
-zplugin light zsh-users/zsh-autosuggestions
+zinit ice wait atload"_zsh_autosuggest_start" lucid
+zinit light zsh-users/zsh-autosuggestions
 ### End of zsh-autosuggestions chunk
 ########################################################################################################################
 
 ### zsh-completions (https://github.com/zsh-users/zsh-completions)
-zplugin ice wait blockf atpull'zplugin creinstall -q .' lucid
-zplugin light zsh-users/zsh-completions
+zinit ice wait blockf atpull'zplugin creinstall -q .' lucid
+zinit light zsh-users/zsh-completions
 ### End of zsh-completions chunk
 
 ### fast-syntax-highlighting (https://github.com/zdharma/fast-syntax-highlighting)
-zplugin ice wait atinit"zpcompinit; zpcdreplay" lucid
-zplugin light zdharma/fast-syntax-highlighting
+zinit ice wait atinit"zpcompinit; zpcdreplay" lucid
+zinit light zdharma/fast-syntax-highlighting
 ### End of fast-syntax-highlighting chunk
 
 ### NVM
-zplugin light lukechilds/zsh-nvm
+zinit light lukechilds/zsh-nvm
 ### End of NVM chunk
 
 ########################################################################################################################
@@ -144,8 +159,8 @@ zplugin light lukechilds/zsh-nvm
 ########################################################################################################################
 
 ### powerlevel10k
-zplugin ice depth=1
-zplugin light romkatv/powerlevel10k
+zinit ice depth=1
+zinit light romkatv/powerlevel10k
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

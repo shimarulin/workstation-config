@@ -5,23 +5,6 @@
   apt:
     name: "{{ zsh_packages }}"
 
-- name: install addition packages
-  include_tasks: install_package.yml
-  loop:
-    # Alternative packages
-    # - http://ftp.br.debian.org/debian/pool/main/f/fzf/fzf_0.20.0-1_amd64.deb
-    - https://launchpad.net/ubuntu/+archive/primary/+files/fzf_0.20.0-1_amd64.deb
-    - https://github.com/BurntSushi/ripgrep/releases/download/11.0.2/ripgrep_11.0.2_amd64.deb
-
-- name: check that the zplugin exists
-  stat:
-    path: ~/.zplugin/bin/zplugin.zsh
-  register: zsh_zplugin_stat_result
-
-- name: install zplugin
-  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/zdharma/zplugin/master/doc/install.sh)"
-  when: zsh_zplugin_stat_result.stat.exists == false
-
 - name: configure ~/.zshenv
   copy:
     src: .zshenv
