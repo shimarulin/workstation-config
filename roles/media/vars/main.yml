@@ -8,4 +8,5 @@ media_packages:
   - gstreamer1.0-plugins-ugly
   - gstreamer1.0-vaapi
   - grilo-plugins-0.3-extra
-  - totem
+  #- totem
+  - celluloid
