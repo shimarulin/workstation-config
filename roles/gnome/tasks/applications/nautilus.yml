@@ -1,9 +1,16 @@
 ---
+- name: add nautilus-compare PPA
+  become: yes
+  apt_repository:
+    repo: ppa:boamaod/nautilus-compare
+    update_cache: yes
+    state: present
+
 - name: install Nautilus extensions
   become: yes
   apt:
     name: "{{ nautilus_extensions_packages }}"
   vars:
     nautilus_extensions_packages:
-      - python-nautilus
+      - python3-nautilus
       - nautilus-compare
