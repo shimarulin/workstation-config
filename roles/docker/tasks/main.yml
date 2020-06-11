@@ -9,8 +9,7 @@
 - name: add repository
   become: yes
   apt_repository:
-    #    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ lsb_release.stdout }} stable"
-    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu disco stable"
+    repo: "deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ lsb_release.stdout }} stable"
     filename: docker
     update_cache: yes
     state: present
@@ -33,6 +32,6 @@
 - name: install Docker Compose
   become: yes
   shell: |
-    curl -L https://github.com/docker/compose/releases/download/1.25.0-rc2/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+    curl -L https://github.com/docker/compose/releases/download/1.26.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
     chmod +x /usr/local/bin/docker-compose
   when: docker_compose_stat_result.stat.exists == false
