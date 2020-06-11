@@ -6,5 +6,5 @@
 
 - include_tasks: applications.yml
 - include_tasks: extensions.yml
-#- include_tasks: appearance.yml
+- include_tasks: appearance.yml
 - include_tasks: shortcuts.yml

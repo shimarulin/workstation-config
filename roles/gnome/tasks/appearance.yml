@@ -1,9 +1,14 @@
 ### Arc Theme repository is outdated
-- name: add Arc Theme repository
+#- name: add Arc Theme repository
+#  become: yes
+#  apt_repository:
+#    repo: ppa:fossfreedom/arc-gtk-theme-daily
+#    state: present
+
+- name: install Arc Theme from Debian repository
   become: yes
-  apt_repository:
-    repo: ppa:fossfreedom/arc-gtk-theme-daily
-    state: present
+  apt:
+    deb: http://ftp.debian.org/debian/pool/main/a/arc-theme/arc-theme_20200513-1_all.deb
 
 - name: add Papirus icon theme repository
   become: yes
@@ -19,8 +24,8 @@
   vars:
     appearance_packages:
       # Optional name: arc-solid-theme
-      - arc-solid-theme
-      - arc-theme
+      #      - arc-solid-theme
+      #      - arc-theme
       - papirus-icon-theme
 
 - name: Install the flatpak themes from flathub
@@ -29,6 +34,10 @@
     name: "{{ item }}"
     state: present
   loop:
+    - org.gtk.Gtk3theme.Arc
+    - org.gtk.Gtk3theme.Arc-solid
+    - org.gtk.Gtk3theme.Arc-Dark
+    - org.gtk.Gtk3theme.Arc-Dark-solid
     - org.gtk.Gtk3theme.Arc-Darker
     - org.gtk.Gtk3theme.Arc-Darker-solid
   register: flatpak_theme_out
