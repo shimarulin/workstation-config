@@ -12,5 +12,6 @@ libreoffice_packages:
   - libreoffice-l10n-ru
   - libreoffice-help-ru
   - libreoffice-style-breeze
-  - libreoffice-style-papirus
+  # not available
+  #- libreoffice-style-papirus
   - libreoffice-style-sifr
