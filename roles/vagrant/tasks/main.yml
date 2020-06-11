@@ -3,21 +3,4 @@
 - name: install dependencies
   become: yes
   apt:
-    deb: https://releases.hashicorp.com/vagrant/2.2.6/vagrant_2.2.6_x86_64.deb
-
-# https://github.com/oracle/vagrant-boxes/issues/178#issue-536720633
-- name: patch Vagrant v2.2.6 to use with VirtualBox v6.1
-  become: yes
-  copy:
-    src: "{{ item.src }}"
-    dest: "{{ item.dest }}"
-    owner: root
-    group: root
-    mode: "0644"
-  loop:
-    - src: plugin.rb
-      dest: /opt/vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/providers/virtualbox/plugin.rb
-    - src: driver/meta.rb
-      dest: /opt/vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/providers/virtualbox/driver/meta.rb
-    - src: driver/version_6_1.rb
-      dest: /opt/vagrant/embedded/gems/2.2.6/gems/vagrant-2.2.6/plugins/providers/virtualbox/driver/version_6_1.rb
+    deb: https://releases.hashicorp.com/vagrant/2.2.9/vagrant_2.2.9_x86_64.deb
