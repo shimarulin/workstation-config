@@ -17,6 +17,8 @@ Security:
 
 Writing
 
+- https://espanso.org/
+- https://github.com/autokey/autokey
 - https://wiki.gnome.org/Apps/Dictionary
 - https://somas.pages.gitlab.gnome.org/apostrophe/ (uberwriter)
   https://flathub.org/apps/details/org.gnome.gitlab.somas.Apostrophe
