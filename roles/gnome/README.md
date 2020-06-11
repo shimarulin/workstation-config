@@ -1,5 +1,12 @@
 # Setup Gnome
 
+## Applications
+
+### Gedit
+
+- https://github.com/maoschanz/gedit-plugin-markdown_preview
+  (https://www.linuxuprising.com/2020/02/how-to-add-markdown-support-to-gedit.html)
+
 ## Appearance
 
 ### GTK3 and Shell theme
