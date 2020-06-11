@@ -8,12 +8,12 @@
 - name: accept Oracle Java license
   become: yes
   debconf:
-    name: oracle-java12-installer
+    name: oracle-java14-installer
     question: shared/accepted-oracle-license-v1-2
     value: "true"
     vtype: select
 
-- name: install Oracle Java 13
+- name: install Oracle Java 14
   become: yes
   apt:
-    name: oracle-java13-installer
+    name: oracle-java14-installer

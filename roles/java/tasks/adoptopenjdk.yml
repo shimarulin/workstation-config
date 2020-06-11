@@ -15,4 +15,4 @@
 - name: install AdoptOpenJDK
   become: yes
   apt:
-    name: adoptopenjdk-13-hotspot
+    name: adoptopenjdk-14-hotspot
