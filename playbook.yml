@@ -8,13 +8,14 @@
     - common
     - git
     - flatpak
-    - fonts
-    - media
+    ### ?
+    #- fonts
 
     # Environment
     - python3
     - java
-    - yarn
+    # Install yarn from NPM
+    # - yarn
 
     # Shell
     - zsh
@@ -27,7 +28,7 @@
     - gnome
 
     # Security tools
-    - enpass
+    #- enpass
 
     # Network
     - chrome
@@ -38,23 +39,24 @@
     - vagrant
 
     # Additional tools
-    - multibootusb
-    - sparkleshare
+    #- multibootusb
+    #- sparkleshare
 
     # Messaging
-    - skype
+    #- skype
 
     # Development tools
-    - vscode
+    #- vscode
     - meld
-    - insomnia
+    #- insomnia
 
     # Editors
-    - typora
-    - marktext
+    #- typora
+    #- marktext
 
     # Office
     - libreoffice
 
     # Media tools
-    - obs-studio
+    - media
+    #- obs-studio
