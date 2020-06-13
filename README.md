@@ -145,3 +145,9 @@ In project root:
 ```bash
 vagrant destroy
 ```
+
+### Watch DConf changes
+
+```bash
+dconf watch /
+```
