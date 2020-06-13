@@ -1,15 +1,15 @@
 ---
 # vars file for fonts
 fonts_packages:
-  #  - fonts-noto-core
-  #  - fonts-noto-ui-core
-  #  - fonts-noto-mono
-  # Color emoji
-  - fonts-noto-color-emoji
-  # A monochrome emoji for JetBrains IDE's
-  #  - fonts-symbola
-  # Pre-patched and adjusted fonts for usage with the Powerline statusline plugin
-  - fonts-powerline
+#  - fonts-noto-core
+#  - fonts-noto-ui-core
+#  - fonts-noto-mono
+# Color emoji
+#  - fonts-noto-color-emoji
+# A monochrome emoji for JetBrains IDE's
+#  - fonts-symbola
+# Pre-patched and adjusted fonts for usage with the Powerline statusline plugin
+#  - fonts-powerline
 
 ### Use "url" property for load ZIP archive or "urls" for an array of fonts to load directly
 fonts_remotes:
