@@ -22,3 +22,33 @@ History
 
 - https://github.com/arc-design/arc-theme
 - https://github.com/snwh/paper-icon-theme
+
+### Fix Gnome Shell 3.36.2 issue for GPaste
+
+https://github.com/Keruspe/GPaste/issues/307
+
+```css
+.system-menu-action {
+  -st-icon-style: symbolic;
+  border-radius: 32px;
+  /* wish we could do 50% */
+  padding: 13px;
+  color: #d3dae3;
+  background-color: #444a58;
+  border: 1px solid #2b2e39;
+}
+.system-menu-action:hover,
+.system-menu-action:focus {
+  color: #d3dae3;
+  background-color: #444a58;
+  border: 1px solid #5294e2;
+}
+.system-menu-action:active {
+  background-color: #1b6acb;
+  color: #ffffff;
+  border-color: #092444;
+}
+.system-menu-action > StIcon {
+  icon-size: 16px;
+}
+```
