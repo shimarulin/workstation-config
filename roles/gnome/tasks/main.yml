@@ -8,3 +8,28 @@
 - include_tasks: extensions.yml
 - include_tasks: appearance.yml
 - include_tasks: shortcuts.yml
+
+- name: configure Gnome
+  dconf:
+    key: "{{ item.key }}"
+    value: "{{ item.value }}"
+  loop:
+    # Hide Dock
+    - key: "/org/gnome/shell/extensions/dash-to-dock/dock-fixed"
+      value: "false"
+    # Trash auto clean
+    - key: "/org/gnome/desktop/privacy/remove-old-trash-files"
+      value: "true"
+    - key: "/org/gnome/desktop/privacy/remove-old-temp-files"
+      value: "true"
+    # Hot corners
+    - key: "/org/gnome/desktop/interface/enable-hot-corners"
+      value: "true"
+#    - key: ""
+#      value: ""
+#    - key: ""
+#      value: ""
+#    - key: ""
+#      value: ""
+#    - key: ""
+#      value: ""
