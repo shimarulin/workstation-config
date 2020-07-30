@@ -1,3 +1,19 @@
+- [ ] Add Gnome Shell extension
+- [x] update ZSH config
+- [x] update fonts
+- [ ] Fix Gnome Shell 3.36.2 issue for GPaste
+
+Apps:
+
+- [ ] https://flathub.org/apps/details/com.github.geigi.cozy
+- [ ] https://github.com/johnfactotum/foliate
+- [ ] https://flathub.org/apps/details/com.github.amikha1lov.RecApp
+
+Utils
+
+-
+- https://flathub.org/apps/details/com.uploadedlobster.peek
+
 UI:
 
 - https://www.omgubuntu.co.uk/2020/02/arc-menu-adds-unity-dash-layout
@@ -34,7 +50,7 @@ Content
 - https://github.com/varlesh/VLC-Arc-Dark
 - https://gitlab.com/NovaQC/vlc-yaru-dark/
 - https://gitlab.gnome.org/GNOME/sushi
-- https://github.com/johnfactotum/foliate
+-
 - https://gitlab.gnome.org/World/Shortwave
 
 GTD, Todos, Notes, Time Tracking

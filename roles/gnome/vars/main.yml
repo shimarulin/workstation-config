@@ -23,6 +23,14 @@ gnome_extensions:
     repo: https://github.com/sunwxg/gnome-shell-extension-unlockDialogBackground.git
     path: "/unlockDialogBackground@sun.wxg@gmail.com"
 
+  #  - name: tweaks-system-menu@extensions.gnome-shell.fifi.org
+  #    zip: https://github.com/F-i-f/tweaks-system-menu/releases/download/v10/tweaks-system-menu@extensions.gnome-shell.fifi.org.v10.shell-extension.zip
+  #    path: ""
+  #
+  #  - name: ???
+  #    repo: https://github.com/PRATAP-KUMAR/Re_Arrange_System_Menu_Items.git
+  #    path: ""
+
   - name: GPaste@gnome-shell-extensions.gnome.org
 
   - name: user-theme@gnome-shell-extensions.gcampax.github.com
