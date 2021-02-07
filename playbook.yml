@@ -23,7 +23,7 @@
     - ubuntu
     - tilix
     - gpaste
-    - ulauncher
+    #- ulauncher
     - gnome
 
     # Security tools
@@ -42,7 +42,7 @@
     #- sparkleshare
 
     # Messaging
-    #- skype
+    - skype
 
     # Development tools
     #- vscode
