@@ -8,7 +8,7 @@
 - name: install Arc Theme from Debian repository
   become: yes
   apt:
-    deb: http://ftp.debian.org/debian/pool/main/a/arc-theme/arc-theme_20200513-1_all.deb
+    deb: http://ftp.debian.org/debian/pool/main/a/arc-theme/arc-theme_20201013-2_all.deb
 
 - name: add Papirus icon theme repository
   become: yes
